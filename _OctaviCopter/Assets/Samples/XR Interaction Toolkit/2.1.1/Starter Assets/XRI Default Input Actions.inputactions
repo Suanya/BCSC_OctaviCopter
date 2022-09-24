@@ -1373,6 +1373,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Flying",
+            "id": "7328e65e-b520-48fe-a591-c8106b7e883c",
+            "actions": [
+                {
+                    "name": "FlyUp",
+                    "type": "Value",
+                    "id": "41debc80-070b-4071-9d6f-b16476f0f575",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "FlyDown",
+                    "type": "Value",
+                    "id": "15a983dc-beea-4a95-91db-d554f57e466e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a89e6dec-083e-4178-b133-9c15bcb0a7a3",
+                    "path": "<OculusTouchController>/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlyUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3e6e0e1c-f15b-4807-8e57-b24921be4b59",
+                    "path": "<OculusTouchController>/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlyDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
