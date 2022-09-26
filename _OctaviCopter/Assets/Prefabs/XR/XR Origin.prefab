@@ -1433,6 +1433,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8407266289456125789, guid: d5603ae6a873a4652b3fe294a1611e6d,
+        type: 3}
+      propertyPath: m_TagString
+      value: OctaviCopter
+      objectReference: {fileID: 0}
     - target: {fileID: 8616366812872610694, guid: d5603ae6a873a4652b3fe294a1611e6d,
         type: 3}
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
