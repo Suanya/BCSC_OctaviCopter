@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb25020a458074d8d96932b6b2a9dd, type: 3}
+  m_Name: PerfectFifth
+  m_EditorClassIdentifier: 
+  missionID: 1
+  missionName: PerfectFifth
+  missionGraphic: {fileID: 0}
+  baseNote: {fileID: 2860123181958648225, guid: 79227d3349d626c4fa44d49bff4fb172,
+    type: 3}
+  intervalNote: {fileID: 2860123181958648225, guid: bc7556603a1d8c747b721ec7fb8f9d6b,
+    type: 3}
