@@ -1243,6 +1243,11 @@ PrefabInstance:
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.Playables.PlayableDirector, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 464981618346230057, guid: d5603ae6a873a4652b3fe294a1611e6d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 27ff917400fff476caea8bae270784fd, type: 2}
     - target: {fileID: 1000668366933276665, guid: d5603ae6a873a4652b3fe294a1611e6d,
         type: 3}
       propertyPath: m_Size.x
@@ -1288,6 +1293,16 @@ PrefabInstance:
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.Playables.PlayableDirector, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3500108021388588243, guid: d5603ae6a873a4652b3fe294a1611e6d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.3472996
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500108021388588243, guid: d5603ae6a873a4652b3fe294a1611e6d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3588624545493899715, guid: d5603ae6a873a4652b3fe294a1611e6d,
         type: 3}
       propertyPath: m_Size.x
@@ -1318,6 +1333,11 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.098323405
       objectReference: {fileID: 0}
+    - target: {fileID: 5892007668973878441, guid: d5603ae6a873a4652b3fe294a1611e6d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 835c7fb4931964a4ea63767e85f7fc70, type: 2}
     - target: {fileID: 7079364811681116954, guid: d5603ae6a873a4652b3fe294a1611e6d,
         type: 3}
       propertyPath: m_RootOrder
