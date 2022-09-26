@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2148975744245104151}
   - component: {fileID: 8510970470966456697}
   m_Layer: 0
-  m_Name: RoundChair_HighPoly
+  m_Name: RoundChair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 835c7fb4931964a4ea63767e85f7fc70, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 2733456849147055812}
   - component: {fileID: 3611136850440368492}
   m_Layer: 0
-  m_Name: RoundChair_HighPoly_Pillow
+  m_Name: RoundChai_Pillow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: be26d8db12e484c92a194c788b23588c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 5472660136475348619}
   - component: {fileID: 5266775460525500546}
   m_Layer: 0
-  m_Name: RoundChair_HighPoly_Adjuster
+  m_Name: RoundChair_Adjuster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,7 +254,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: be26d8db12e484c92a194c788b23588c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
