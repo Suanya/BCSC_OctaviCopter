@@ -48,7 +48,8 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 0}
+  m_ModelPrefab: {fileID: 4263036361605140, guid: 0550f91536035fb4482a39d22101e6f2,
+    type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -301,8 +302,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.01, y: 0.0031523525, z: 0.01}
-  m_Center: {x: 0, y: -0.005, z: 0}
+  m_Size: {x: 0.054365207, y: 0.0031523528, z: 0.039345913}
+  m_Center: {x: -0.015354326, y: 0.01, z: 0.0040994184}
 --- !u!1 &7433466714848692747
 GameObject:
   m_ObjectHideFlags: 0
