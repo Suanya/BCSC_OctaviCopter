@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelID: 1
   levelName: LetsLearnFifths
-  missionCategory: Intervals
+  missionCategory: Interval
   missionKeyPrefab: {fileID: 1853333084079902770, guid: a1541f6d43bc9674395a4658c5c495a4,
     type: 3}
   rewardSong: {fileID: 8300000, guid: 1f10f3fed7d1240eebb5f9f2a6d63099, type: 3}
