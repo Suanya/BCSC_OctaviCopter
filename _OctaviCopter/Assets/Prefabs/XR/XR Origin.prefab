@@ -1000,6 +1000,10 @@ PrefabInstance:
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.Playables.PlayableDirector, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 463930442, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 633987596, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
       propertyPath: m_Size.x
       value: 0.023944475
@@ -1035,6 +1039,10 @@ PrefabInstance:
     - target: {fileID: 633987597, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.Playables.PlayableDirector, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 633987598, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 854905464, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
       propertyPath: m_Size.x
@@ -1072,6 +1080,10 @@ PrefabInstance:
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.Playables.PlayableDirector, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 854905466, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1207409702, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -1087,6 +1099,10 @@ PrefabInstance:
     - target: {fileID: 1207409703, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207409703, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1370639142, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
       propertyPath: m_Size.x
@@ -1124,6 +1140,10 @@ PrefabInstance:
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.Playables.PlayableDirector, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1370639144, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1562069060, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -1135,6 +1155,10 @@ PrefabInstance:
     - target: {fileID: 1562069060, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.Playables.PlayableDirector, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1562069061, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1710119735, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
       propertyPath: m_Size.x
@@ -1172,6 +1196,10 @@ PrefabInstance:
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.Playables.PlayableDirector, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1710119737, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1793089058, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
       propertyPath: m_Size.x
       value: 0.023944475
@@ -1207,6 +1235,10 @@ PrefabInstance:
     - target: {fileID: 1793089059, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.Playables.PlayableDirector, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793089060, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1985308838, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
       propertyPath: m_Size.x
@@ -1244,11 +1276,20 @@ PrefabInstance:
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.Playables.PlayableDirector, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1985308840, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 464981618346230057, guid: d5603ae6a873a4652b3fe294a1611e6d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 27ff917400fff476caea8bae270784fd, type: 2}
+    - target: {fileID: 790155407823198512, guid: d5603ae6a873a4652b3fe294a1611e6d,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 955b8ec2cc565274da1dadaaf22218ef, type: 3}
     - target: {fileID: 1000668366933276665, guid: d5603ae6a873a4652b3fe294a1611e6d,
         type: 3}
       propertyPath: m_Size.x
@@ -1294,6 +1335,11 @@ PrefabInstance:
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.Playables.PlayableDirector, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2539819212076488904, guid: d5603ae6a873a4652b3fe294a1611e6d,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a178155dd9f1e42f1ae7b37f654daa6a, type: 3}
     - target: {fileID: 3500108021388588243, guid: d5603ae6a873a4652b3fe294a1611e6d,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1334,11 +1380,36 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.098323405
       objectReference: {fileID: 0}
+    - target: {fileID: 3623116435340734516, guid: d5603ae6a873a4652b3fe294a1611e6d,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606920343743599914, guid: d5603ae6a873a4652b3fe294a1611e6d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9858072
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606920343743599914, guid: d5603ae6a873a4652b3fe294a1611e6d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.16788153
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606920343743599914, guid: d5603ae6a873a4652b3fe294a1611e6d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 19.329
+      objectReference: {fileID: 0}
     - target: {fileID: 5892007668973878441, guid: d5603ae6a873a4652b3fe294a1611e6d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 835c7fb4931964a4ea63767e85f7fc70, type: 2}
+    - target: {fileID: 6545306958838852842, guid: d5603ae6a873a4652b3fe294a1611e6d,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7079364811681116954, guid: d5603ae6a873a4652b3fe294a1611e6d,
         type: 3}
       propertyPath: m_RootOrder
@@ -1454,6 +1525,11 @@ PrefabInstance:
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.Playables.PlayableDirector, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8958497022895070011, guid: d5603ae6a873a4652b3fe294a1611e6d,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9042810518587344507, guid: d5603ae6a873a4652b3fe294a1611e6d,
         type: 3}
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1480,6 +1556,12 @@ GameObject:
 --- !u!4 &1070979565890403957 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7079364811681116954, guid: d5603ae6a873a4652b3fe294a1611e6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7845858739826347375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8766313379436506327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1534079747153158584, guid: d5603ae6a873a4652b3fe294a1611e6d,
     type: 3}
   m_PrefabInstance: {fileID: 7845858739826347375}
   m_PrefabAsset: {fileID: 0}
@@ -1606,3 +1688,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05112116, y: 0.014639378, z: 0.06510937}
   m_Center: {x: -0.0013066342, y: 0.010423064, z: -0.098323405}
+--- !u!95 &782528658
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8766313379436506327}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ffd0279d4164d42b6865a9858f57e700, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
