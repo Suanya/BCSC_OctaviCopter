@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Note : MonoBehaviour
 {
     private AudioSource audioSource;
     public float altitude;
+
+    public event Action <Note> OnNoteCollected;
 
     void Start()
     {
@@ -16,8 +19,15 @@ public class Note : MonoBehaviour
     {
         if (other.CompareTag("OctaviCopter"))
         {
-            audioSource.PlayOneShot(audioSource.clip);
+            NoteHitActivities();
         }
-        
+
+    }
+
+    private void NoteHitActivities()
+    {
+        audioSource.PlayOneShot(audioSource.clip);
+        // maybe haptic feedback here?
+        OnNoteCollected?.Invoke(this);
     }
 }

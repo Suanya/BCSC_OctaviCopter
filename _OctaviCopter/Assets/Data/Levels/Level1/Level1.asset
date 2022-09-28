@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c167c9e14d550d45994e3376d4b5fdc, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: 
+  levelID: 1
+  levelName: LetsLearnFifths
+  missionCategory: Interval
+  missionKeyPrefab: {fileID: 1853333084079902770, guid: a1541f6d43bc9674395a4658c5c495a4,
+    type: 3}
+  rewardSong: {fileID: 8300000, guid: 1f10f3fed7d1240eebb5f9f2a6d63099, type: 3}
+  missions:
+  - {fileID: 11400000, guid: 307fc638a1b0cc34888b80c270f03336, type: 2}
+  - {fileID: 11400000, guid: 317ef726a8a06b44880c769f6e3764a3, type: 2}
