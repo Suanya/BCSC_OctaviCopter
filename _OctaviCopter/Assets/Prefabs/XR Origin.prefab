@@ -8245,7 +8245,7 @@ GameObject:
   - component: {fileID: 4239735283979930813}
   - component: {fileID: 4239735283979930814}
   - component: {fileID: 4239735283979930815}
-  - component: {fileID: 4239735283979930800}
+  - component: {fileID: 8116974056636369736}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: Untagged
@@ -8525,8 +8525,8 @@ MonoBehaviour:
   m_PlayHapticsOnHoverCanceled: 0
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
---- !u!135 &4239735283979930800
-SphereCollider:
+--- !u!65 &8116974056636369736
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -8536,7 +8536,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Size: {x: 0.05, y: 0.03, z: 0.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4239735284194316928
 GameObject:
@@ -9080,7 +9080,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Size: {x: 0.05, y: 0.03, z: 0.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5021760429344473785
 GameObject:
