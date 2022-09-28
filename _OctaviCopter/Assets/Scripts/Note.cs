@@ -19,12 +19,15 @@ public class Note : MonoBehaviour
     {
         if (other.CompareTag("OctaviCopter"))
         {
-            audioSource.PlayOneShot(audioSource.clip);
-            Debug.Log($"Are there subscribers to {this.name}? {OnNoteCollected != null}");
-            OnNoteCollected?.Invoke(this);
+            NoteHitActivities();
         }
 
     }
 
-
+    private void NoteHitActivities()
+    {
+        audioSource.PlayOneShot(audioSource.clip);
+        // maybe haptic feedback here?
+        OnNoteCollected?.Invoke(this);
+    }
 }
