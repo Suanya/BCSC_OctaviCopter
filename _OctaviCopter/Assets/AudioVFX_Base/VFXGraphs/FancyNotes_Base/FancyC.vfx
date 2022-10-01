@@ -298,9 +298,9 @@ MonoBehaviour:
   uiBounds:
     serializedVersion: 2
     x: -3344
-    y: 256
+    y: 229
     width: 5706
-    height: 2526
+    height: 2553
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -611,12 +611,12 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661615449}
-  m_UIPosition: {x: 1663, y: 261}
+  m_UIPosition: {x: 1663, y: 229}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
   - {fileID: 8926484042661615798}
-  - {fileID: 8926484042661615799}
+  - {fileID: 8926484042661615800}
   m_OutputSlots: []
   m_Label: 
   m_Data: {fileID: 8926484042661615448}
@@ -9510,9 +9510,7 @@ MonoBehaviour:
   m_Tooltip: 
   m_Nodes:
   - m_Id: 0
-    linkedSlots:
-    - outputSlot: {fileID: 8926484042661615791}
-      inputSlot: {fileID: 8926484042661615799}
+    linkedSlots: []
     position: {x: 1416, y: 332}
     expandedSlots: []
     expanded: 0
@@ -9549,8 +9547,7 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 1
-  m_LinkedSlots:
-  - {fileID: 8926484042661615799}
+  m_LinkedSlots: []
 --- !u!114 &8926484042661615796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9656,7 +9653,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 4
     m_Space: 2147483647
   m_Property:
     name: LoopDuration
@@ -9666,7 +9663,7 @@ MonoBehaviour:
   m_Direction: 0
   m_LinkedSlots:
   - {fileID: 8926484042661615797}
---- !u!114 &8926484042661615799
+--- !u!114 &8926484042661615800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9684,14 +9681,14 @@ MonoBehaviour:
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
-  m_MasterSlot: {fileID: 8926484042661615799}
+  m_MasterSlot: {fileID: 8926484042661615800}
   m_MasterData:
     m_Owner: {fileID: 8926484042661615447}
     m_Value:
       m_Type:
         m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 4
+      m_SerializableObject: 1
     m_Space: 2147483647
   m_Property:
     name: LoopCount
@@ -9699,5 +9696,4 @@ MonoBehaviour:
       m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
-  m_LinkedSlots:
-  - {fileID: 8926484042661615791}
+  m_LinkedSlots: []
