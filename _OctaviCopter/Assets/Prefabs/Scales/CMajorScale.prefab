@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2932954395269027996}
   m_Layer: 0
   m_Name: CMajorScale
-  m_TagString: Untagged
+  m_TagString: ScaleColumn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1421,6 +1421,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "MissionControl",
+            "id": "564411ec-97b4-4c05-a1ac-6a4825ade7fc",
+            "actions": [
+                {
+                    "name": "StartMission",
+                    "type": "Button",
+                    "id": "dde76e62-49e1-4027-a4a8-11d40b7eb3a7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "00d0bd80-0f18-4928-b6c3-36301830bb97",
+                    "path": "<OculusTouchController>/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartMission",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
