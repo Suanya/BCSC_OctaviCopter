@@ -7,10 +7,11 @@ public class Note : MonoBehaviour
 {
     public float altitude;
     public string displayName;
+    public GameObject keyboardKey;
+
+    public event Action<Note> OnNoteCollected;
 
     private AudioSource audioSource;
-
-    public event Action <Note> OnNoteCollected;
 
     void Start()
     {

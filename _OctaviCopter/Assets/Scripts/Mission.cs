@@ -24,13 +24,27 @@ public class Mission : ScriptableObject
     
     protected int requiredNoteCount;
     protected Dictionary<int, Note> requiredNotes;
+    private KeyboardKey[] keyboardKeys;
 
-    public virtual void SetUpMission()
+    public virtual void SetUpMission(bool hasHints)
     {
+
         octaviCopter = GameObject.FindGameObjectWithTag("OctaviCopter");
         scaleColumn = GameObject.FindGameObjectWithTag("ScaleColumn");
         sceneNotes = FindObjectsOfType<Note>().ToList();
         requiredNotes = new Dictionary<int, Note>();
+        keyboardKeys = FindObjectsOfType<KeyboardKey>();
+    }
+
+    public virtual void ActivateHint(Note sceneNote, KeyboardKey[] keyboardKeys)
+    {
+        foreach (KeyboardKey key in keyboardKeys)
+        {
+            if (sceneNote.CompareTag(key.noteTag))
+            {
+                key.OnHintAvailable();
+            }
+        }
     }
 
     public void CheckNote(Note note)
@@ -51,7 +65,7 @@ public class Mission : ScriptableObject
     {
         //Debug.Log("Correct note hit!");
         requiredNoteIndex++;
-
+        
         // check if the mission is complete
         if (requiredNoteIndex == requiredNoteCount)
         {
@@ -79,6 +93,13 @@ public class Mission : ScriptableObject
         foreach (Note note in sceneNotes)
         {
             note.OnNoteCollected -= CheckNote;
+        }
+
+        foreach (KeyboardKey key in keyboardKeys)
+        {
+            {
+                key.OnHintUnavailable();
+            }
         }
         requiredNoteIndex = 0;
         OnMissionCompleted?.Invoke(this);
