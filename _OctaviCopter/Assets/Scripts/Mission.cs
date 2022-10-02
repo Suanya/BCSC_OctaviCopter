@@ -15,6 +15,7 @@ public class Mission : ScriptableObject
     public event Action OnCorrectNoteCollected;
     public event Action OnIncorrectNoteCollected;
     public event Action<Mission> OnMissionCompleted;
+
     public int requiredNoteIndex = 0;
 
     protected GameObject octaviCopter;
@@ -42,7 +43,6 @@ public class Mission : ScriptableObject
         else
         {
             OnIncorrectNoteHit();
-            Debug.Log($"Expected: {requiredNotes[requiredNoteIndex]} hit: {note}");
         }
 
     }

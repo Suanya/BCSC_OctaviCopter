@@ -11,7 +11,7 @@ public class UpdateUI : MonoBehaviour
     
     [SerializeField] private LevelManager levelManager;
 
-    private void Start()
+    private void OnEnable()
     {
         levelManager.OnMissionSetUp += InformStartingMission;
         levelManager.OnMissionStarted += InformMissionLaunched;
@@ -66,13 +66,12 @@ public class UpdateUI : MonoBehaviour
 
     public void InformLevelCompleted()
     {
-        messageText.text = "Level Complete! Stay tuned for an unforgettable ride!!!";
-
-        Debug.Log("If no text is in messageText, it isn't due to program flow");
+        Debug.Log("If no text is in messageText, it isn't due to program flow, as flow gets here");
 
         levelManager.OnMissionStarted -= InformMissionLaunched;
         levelManager.currentMission.OnMissionCompleted -= InformMissionCompleted;
-        
+
+        messageText.text = "Level Complete! Stay tuned for an unforgettable ride!!!";
     }
 
     public void OnDisable()

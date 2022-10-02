@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour
 
     private int currentMissionIndex = 0;
     private bool missionInProgress = false;
+    private bool missionPending = false;
     private UpdateUI updateUI;
     private string missionInstructions;
 
@@ -38,12 +39,13 @@ public class LevelManager : MonoBehaviour
 
         octaviCopter = GameObject.FindGameObjectWithTag("OctaviCopter");
         updateUI = GetComponent<UpdateUI>();
+        SpawnScaleColumn();
+        missionPending = true;
+        currentMission = FindMission();
     }
 
     private void Start()
     {
-        SpawnScaleColumn();
-        currentMission = FindMission();
         OnMissionSetUp?.Invoke(currentMission.name, missionInstructions);
         currentMission.OnMissionCompleted += CheckMission;
     }
@@ -51,7 +53,7 @@ public class LevelManager : MonoBehaviour
     private void Update()
     {
         float startValue = startMissionReference.action.ReadValue<float>();
-        if (!missionInProgress && startValue > 0)
+        if (!missionInProgress && missionPending && startValue > 0)
         {
             missionInProgress = true;
             StartMission();
@@ -104,6 +106,7 @@ public class LevelManager : MonoBehaviour
         currentMission.OnMissionCompleted -= CheckMission;
         currentMissionIndex++;
         missionInProgress = false;
+        missionPending = false;
 
         // check to see if there are any more missions
         if (currentMissionIndex == currentLevel.missions.Length)
@@ -127,12 +130,13 @@ public class LevelManager : MonoBehaviour
         currentMission = FindMission();
         OnMissionSetUp?.Invoke(currentMission.name, missionInstructions);
         currentMission.OnMissionCompleted += CheckMission;
+        missionPending = true;
     }
 
     private void OnLevelComplete()
     {
         // Play reward scene
-
+        missionPending = false;
         currentMissionIndex = 0;
         OnLastMissionComplete?.Invoke();
     }
