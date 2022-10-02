@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Ludiq.Dependencies.Sqlite;
+using SQLite4Unity3d;
 
 [Table("User")]
 public class User 
