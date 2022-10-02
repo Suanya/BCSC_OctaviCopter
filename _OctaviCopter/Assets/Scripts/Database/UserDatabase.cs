@@ -1,10 +1,10 @@
-using Ludiq.Dependencies.Sqlite;
+using SQLite4Unity3d;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-public class UserDatabase : MonoBehaviour
+public static class UserDatabase 
 {
     private static string databasePath = "UserDatabase.db";
     private static readonly SQLiteConnection connection;
@@ -26,12 +26,12 @@ public class UserDatabase : MonoBehaviour
 
     }
 
-    public static User GetUser(string username)
+    public static User GetUser(string userName)
     {
         try
         {
             // executed until an exception is thrown or it completes successfully
-            return connection.Get<User>(username);
+            return connection.Get<User>(userName);
         }
         catch
         {
