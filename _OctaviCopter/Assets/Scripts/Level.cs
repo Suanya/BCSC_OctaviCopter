@@ -11,5 +11,6 @@ public class Level : ScriptableObject
     public GameObject missionKeyPrefab;
     public AudioClip rewardSong;
     public Mission[] missions;
+    public bool hintsAvailable;
 
 }

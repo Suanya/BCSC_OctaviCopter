@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   levelID: 1
-  levelName: LetsLearnFifths
+  levelName: Lets Learn Fifths and Seconds
   missionCategory: Interval
   missionKeyPrefab: {fileID: 1853333084079902770, guid: a1541f6d43bc9674395a4658c5c495a4,
     type: 3}
@@ -21,3 +21,4 @@ MonoBehaviour:
   missions:
   - {fileID: 11400000, guid: 307fc638a1b0cc34888b80c270f03336, type: 2}
   - {fileID: 11400000, guid: 317ef726a8a06b44880c769f6e3764a3, type: 2}
+  hintsAvailable: 1
