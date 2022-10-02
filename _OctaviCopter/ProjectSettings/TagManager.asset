@@ -3,7 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - OctaviCopter
+  - ScaleColumn
+  - A
+  - A#Bb
+  - B
+  - C
+  - C#Db
+  - D
+  - D#Eb
+  - E
+  - F
+  - F#Gb
+  - G
+  - G#Ab
+  - KeyboardKey
   layers:
   - Default
   - TransparentFX

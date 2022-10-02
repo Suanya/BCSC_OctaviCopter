@@ -15,6 +15,8 @@ MonoBehaviour:
   missionID: 2
   missionName: Major Second
   missionGraphic: {fileID: 0}
+  scaleColumnSpacing: 15
+  requiredNoteIndex: 0
   baseNote: {fileID: 2860123181958648225, guid: bc7556603a1d8c747b721ec7fb8f9d6b,
     type: 3}
   intervalNote: {fileID: 2860123181958648225, guid: c63fe2cca3f0c5646a4a8b908bec79e8,

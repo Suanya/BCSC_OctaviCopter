@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2932954395269027996}
   m_Layer: 0
   m_Name: CMajorScale
-  m_TagString: Untagged
+  m_TagString: ScaleColumn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,6 +44,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2932954395269027996}
     m_Modifications:
+    - target: {fileID: 2860123181958648225, guid: c63fe2cca3f0c5646a4a8b908bec79e8,
+        type: 3}
+      propertyPath: fancyVersion
+      value: 
+      objectReference: {fileID: 3225579572804893428, guid: be769823cf95348e7bd4377c55fcc065,
+        type: 3}
     - target: {fileID: 7205487643191986592, guid: c63fe2cca3f0c5646a4a8b908bec79e8,
         type: 3}
       propertyPath: m_Name
@@ -204,6 +210,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2932954395269027996}
     m_Modifications:
+    - target: {fileID: 2860123181958648225, guid: bc7556603a1d8c747b721ec7fb8f9d6b,
+        type: 3}
+      propertyPath: fancyVersion
+      value: 
+      objectReference: {fileID: 6742086394515430476, guid: 21e312dc5e1644a5fa16bc5e149e1835,
+        type: 3}
     - target: {fileID: 7205487643191986592, guid: bc7556603a1d8c747b721ec7fb8f9d6b,
         type: 3}
       propertyPath: m_Name
@@ -284,6 +296,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2932954395269027996}
     m_Modifications:
+    - target: {fileID: 2860123181958648225, guid: 79227d3349d626c4fa44d49bff4fb172,
+        type: 3}
+      propertyPath: fancyVersion
+      value: 
+      objectReference: {fileID: 2833962733811480688, guid: 6f716a6fee447436c95af824e54b5ad0,
+        type: 3}
     - target: {fileID: 7205487643191986592, guid: 79227d3349d626c4fa44d49bff4fb172,
         type: 3}
       propertyPath: m_Name
@@ -533,6 +551,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Note_B
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205487643191986592, guid: 0155290ebadf14d47878a0acb12e7d1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: B
       objectReference: {fileID: 0}
     - target: {fileID: 7205487643191986620, guid: 0155290ebadf14d47878a0acb12e7d1d,
         type: 3}
