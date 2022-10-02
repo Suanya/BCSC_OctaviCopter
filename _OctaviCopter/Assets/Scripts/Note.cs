@@ -5,8 +5,10 @@ using System;
 
 public class Note : MonoBehaviour
 {
-    private AudioSource audioSource;
     public float altitude;
+    public string displayName;
+
+    private AudioSource audioSource;
 
     public event Action <Note> OnNoteCollected;
 
@@ -19,6 +21,7 @@ public class Note : MonoBehaviour
     {
         if (other.CompareTag("OctaviCopter"))
         {
+            
             NoteHitActivities();
         }
 

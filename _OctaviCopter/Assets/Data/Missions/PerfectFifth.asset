@@ -15,6 +15,8 @@ MonoBehaviour:
   missionID: 1
   missionName: PerfectFifth
   missionGraphic: {fileID: 0}
+  scaleColumnSpacing: 15
+  requiredNoteIndex: 0
   baseNote: {fileID: 2860123181958648225, guid: 79227d3349d626c4fa44d49bff4fb172,
     type: 3}
   intervalNote: {fileID: 2860123181958648225, guid: bc7556603a1d8c747b721ec7fb8f9d6b,
