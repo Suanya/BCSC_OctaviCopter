@@ -22,11 +22,11 @@ public class LevelManager : MonoBehaviour
     public GameObject octaviCopter;
     public Mission currentMission;
     public GameObject currentScaleColumn;
+    public bool missionInProgress = false;
 
     private int currentMissionIndex = 0;
-    private bool missionInProgress = false;
     private bool missionPending = false;
-    private UpdateUI updateUI;
+    private bool hintsAvailable;
     private string missionInstructions;
 
     //public UnityEvent Response;
@@ -38,7 +38,6 @@ public class LevelManager : MonoBehaviour
         // currentLevel = GetLevelFromDatabase
 
         octaviCopter = GameObject.FindGameObjectWithTag("OctaviCopter");
-        updateUI = GetComponent<UpdateUI>();
         SpawnScaleColumn();
         missionPending = true;
         currentMission = FindMission();
@@ -62,18 +61,19 @@ public class LevelManager : MonoBehaviour
 
     private Mission FindMission()
     {
+        hintsAvailable = currentLevel.hintsAvailable;
         switch (currentLevel.missionCategory)
         {
             case "Interval":
                 var intervalMission = (Interval)currentLevel.missions[currentMissionIndex];
-                intervalMission.SetUpMission();
+                intervalMission.SetUpMission(hintsAvailable);
                 missionInstructions = $"Base note: {intervalMission.baseNote.displayName}  " +
                                       $"Interval note: {intervalMission.intervalNote.displayName}";
                 break;
 
             case "Chord":
                 var chordMission = (Chord)currentLevel.missions[currentMissionIndex];
-                chordMission.SetUpMission();
+                chordMission.SetUpMission(hintsAvailable);
                 missionInstructions = $"Base note: {chordMission.baseNote.displayName}  " +
                                       $"Third note: {chordMission.thirdNote.displayName}  " +
                                       $"Fifth note: {chordMission.fifthNote.displayName}";
