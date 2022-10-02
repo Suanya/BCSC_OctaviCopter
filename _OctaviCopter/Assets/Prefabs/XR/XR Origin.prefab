@@ -1187,7 +1187,15 @@ PrefabInstance:
       value: -0.098323405
       objectReference: {fileID: 0}
     - target: {fileID: 1370639143, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370639143, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370639143, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1370639143, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
@@ -1195,8 +1203,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3078663110144688690}
     - target: {fileID: 1370639143, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370639143, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370639143, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370639143, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.Playables.PlayableDirector, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370639143, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.Playables.PlayableDirector, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370639143, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1370639144, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
       propertyPath: m_IsKinematic
@@ -1476,7 +1504,7 @@ PrefabInstance:
     - target: {fileID: 5924735448153234225, guid: d5603ae6a873a4652b3fe294a1611e6d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6545306958838852842, guid: d5603ae6a873a4652b3fe294a1611e6d,
         type: 3}
@@ -1677,7 +1705,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d1c32b4199ae345d7ac38adfd146d7dd, type: 2}
+      objectReference: {fileID: 2100000, guid: 3c03ee2ce4db843c390e7207d61f9a79, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5603ae6a873a4652b3fe294a1611e6d, type: 3}
 --- !u!1 &1751489939139746354 stripped
