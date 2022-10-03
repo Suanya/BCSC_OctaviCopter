@@ -72,6 +72,9 @@ public class UpdateUI : MonoBehaviour
         levelManager.currentMission.OnMissionCompleted -= InformMissionCompleted;
 
         messageText.text = "Level Complete! Stay tuned for an unforgettable ride!!!";
+        Debug.Log($"Text '{messageText.text}' should have appeared in the UI");
+
+            
     }
 
     public void OnDisable()
