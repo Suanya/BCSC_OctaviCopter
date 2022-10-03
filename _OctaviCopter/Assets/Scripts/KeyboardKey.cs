@@ -8,27 +8,28 @@ public class KeyboardKey : MonoBehaviour
     public GameObject fancyNotePrefab;
     public string noteTag;
 
+    [SerializeField] private MeshRenderer meshRenderer;
+    [SerializeField] private Material regularMaterial;
 
     private LevelManager levelManager;
-    private MeshRenderer meshRenderer;
-    private Material regularMaterial;
     private GameObject regularNote;
     private GameObject fancyNote;
 
-    private void Awake()
+    private void Start()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
-        regularMaterial = meshRenderer.material;
         levelManager = FindObjectOfType<LevelManager>();
     }
     public void OnHintAvailable()
     {
+
         // change colour of key if it's in the mission
         meshRenderer.material = hintMaterial;
+
     }
 
     public void OnHintUnavailable()
     {
+        // return the key to its normal colour
         meshRenderer.material = regularMaterial;
     }
 

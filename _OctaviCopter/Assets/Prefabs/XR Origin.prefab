@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Base note: C3  Interval note: G3'
+  m_text: 'Instructions: Enter here'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -151,9 +151,10 @@ GameObject:
   - component: {fileID: 7500361215011209457}
   - component: {fileID: 9209463284888177895}
   - component: {fileID: 5504235361234473887}
+  - component: {fileID: 2076558568766832985}
   m_Layer: 0
   m_Name: OctaviCockpit_KeyboardKey_C.001
-  m_TagString: Untagged
+  m_TagString: KeyboardKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -528,6 +529,23 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &2076558568766832985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227462252056522284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintMaterial: {fileID: 2100000, guid: 7bf6eb208e66bc5409c5282fc959a5ea, type: 2}
+  fancyNotePrefab: {fileID: 0}
+  noteTag: C
+  meshRenderer: {fileID: 2092681159056897650}
+  regularMaterial: {fileID: 2100000, guid: 674565753313a4e5eb07a3ce0351a8c6, type: 2}
 --- !u!1 &893146636961461562
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,9 +806,10 @@ GameObject:
   - component: {fileID: 8525149089215398449}
   - component: {fileID: 3474468270494736043}
   - component: {fileID: 3538840454864342748}
+  - component: {fileID: 5916453448708575785}
   m_Layer: 0
   m_Name: OctaviCockpit_KeyboardKey_F.001
-  m_TagString: Untagged
+  m_TagString: KeyboardKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1165,6 +1184,23 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &5916453448708575785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310295177144674144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintMaterial: {fileID: 2100000, guid: 5383ac58d0f690242adbcfb58fec8830, type: 2}
+  fancyNotePrefab: {fileID: 0}
+  noteTag: F
+  meshRenderer: {fileID: 7659504235401587019}
+  regularMaterial: {fileID: 2100000, guid: 674565753313a4e5eb07a3ce0351a8c6, type: 2}
 --- !u!1 &1832073874814164479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,9 +1218,10 @@ GameObject:
   - component: {fileID: 7240656235334464020}
   - component: {fileID: 4341458134710040290}
   - component: {fileID: 3538840454981651399}
+  - component: {fileID: 3486879276975445874}
   m_Layer: 0
   m_Name: OctaviCockpit_Keyboard_blackKey_C#Db.001
-  m_TagString: Untagged
+  m_TagString: KeyboardKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1559,6 +1596,23 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &3486879276975445874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832073874814164479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintMaterial: {fileID: 2100000, guid: 905db0b29f5ba0642b3e3ac1e8e392cf, type: 2}
+  fancyNotePrefab: {fileID: 0}
+  noteTag: C#Db
+  meshRenderer: {fileID: 6818369884197492944}
+  regularMaterial: {fileID: 2100000, guid: 40170a426c9fd4c23ac57e0e7e1af5ee, type: 2}
 --- !u!1 &2049043685600848373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,9 +1630,10 @@ GameObject:
   - component: {fileID: 1304448633302099125}
   - component: {fileID: 4247090589467904627}
   - component: {fileID: 3538840454040782749}
+  - component: {fileID: 5244546015541420540}
   m_Layer: 0
   m_Name: OctaviCockpit_Keyboard_blackKey3_F#Gb.001
-  m_TagString: Untagged
+  m_TagString: KeyboardKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1953,6 +2008,23 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &5244546015541420540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049043685600848373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintMaterial: {fileID: 2100000, guid: 3b30a627acdc19149a40d3753fbf0879, type: 2}
+  fancyNotePrefab: {fileID: 0}
+  noteTag: F#Gb
+  meshRenderer: {fileID: 709311347631491993}
+  regularMaterial: {fileID: 2100000, guid: 40170a426c9fd4c23ac57e0e7e1af5ee, type: 2}
 --- !u!1 &2065040944236274743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,9 +2042,10 @@ GameObject:
   - component: {fileID: 6598111148750333641}
   - component: {fileID: 7409474818167250723}
   - component: {fileID: 5084290555218380386}
+  - component: {fileID: 3112136473132459348}
   m_Layer: 0
   m_Name: OctaviCockpit_KeyboardKey_E.001
-  m_TagString: Untagged
+  m_TagString: KeyboardKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2347,6 +2420,23 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &3112136473132459348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065040944236274743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintMaterial: {fileID: 2100000, guid: 171144f9fb6ad7e49933694be28a5993, type: 2}
+  fancyNotePrefab: {fileID: 0}
+  noteTag: E
+  meshRenderer: {fileID: 551835797854651874}
+  regularMaterial: {fileID: 2100000, guid: 674565753313a4e5eb07a3ce0351a8c6, type: 2}
 --- !u!1 &2618378925054211164
 GameObject:
   m_ObjectHideFlags: 0
@@ -2445,9 +2535,10 @@ GameObject:
   - component: {fileID: 5740850315315561486}
   - component: {fileID: 3538840454359501250}
   - component: {fileID: 5421997749881270348}
+  - component: {fileID: 3731895923208530681}
   m_Layer: 0
   m_Name: OctaviCockpit_KeyboardKey_G.001
-  m_TagString: Untagged
+  m_TagString: KeyboardKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2822,6 +2913,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05112116, y: 0.014639378, z: 0.06510937}
   m_Center: {x: -0.0013066342, y: 0.010423064, z: -0.098323405}
+--- !u!114 &3731895923208530681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2669576350907681032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintMaterial: {fileID: 2100000, guid: 262126aff06f10a4297de51b9cf0b19d, type: 2}
+  fancyNotePrefab: {fileID: 0}
+  noteTag: G
+  meshRenderer: {fileID: 5845446510034000815}
+  regularMaterial: {fileID: 2100000, guid: 674565753313a4e5eb07a3ce0351a8c6, type: 2}
 --- !u!1 &2812543560077567559
 GameObject:
   m_ObjectHideFlags: 0
@@ -7848,9 +7956,10 @@ GameObject:
   - component: {fileID: 1831670975769577834}
   - component: {fileID: 4200430256445221706}
   - component: {fileID: 3538840455171259715}
+  - component: {fileID: 5497605675636765917}
   m_Layer: 0
   m_Name: OctaviCockpit_Keyboard_blackKey3_G#Ab.001
-  m_TagString: Untagged
+  m_TagString: KeyboardKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8225,6 +8334,23 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &5497605675636765917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3996301157449759406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintMaterial: {fileID: 2100000, guid: b8d0f49d3bf030c458ef4493b9e80c12, type: 2}
+  fancyNotePrefab: {fileID: 0}
+  noteTag: G#Ab
+  meshRenderer: {fileID: 8936395563141268807}
+  regularMaterial: {fileID: 2100000, guid: 40170a426c9fd4c23ac57e0e7e1af5ee, type: 2}
 --- !u!1 &4239735283699642668
 GameObject:
   m_ObjectHideFlags: 0
@@ -8379,7 +8505,7 @@ GameObject:
   - component: {fileID: 4239735283979930813}
   - component: {fileID: 4239735283979930814}
   - component: {fileID: 4239735283979930815}
-  - component: {fileID: 8116974056636369736}
+  - component: {fileID: 1390960534}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: Untagged
@@ -8659,7 +8785,7 @@ MonoBehaviour:
   m_PlayHapticsOnHoverCanceled: 0
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
---- !u!65 &8116974056636369736
+--- !u!65 &1390960534
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8670,8 +8796,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05, y: 0.03, z: 0.05}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.06157988, y: 0.0194628, z: 0.06837804}
+  m_Center: {x: 0.00697733, y: 0.00063169, z: 0.07412397}
 --- !u!1 &4239735284194316928
 GameObject:
   m_ObjectHideFlags: 0
@@ -8923,7 +9049,7 @@ GameObject:
   - component: {fileID: 4239735285548315780}
   - component: {fileID: 4239735285548315781}
   - component: {fileID: 4239735285548315782}
-  - component: {fileID: 4239735285548315900}
+  - component: {fileID: 1295655167}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -9203,7 +9329,7 @@ MonoBehaviour:
   m_PlayHapticsOnHoverCanceled: 0
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
---- !u!65 &4239735285548315900
+--- !u!65 &1295655167
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9214,8 +9340,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05, y: 0.03, z: 0.05}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.05752803, y: 0.0169038, z: 0.07142656}
+  m_Center: {x: -0.01453255, y: -0.00224013, z: 0.07499368}
 --- !u!1 &5021760429344473785
 GameObject:
   m_ObjectHideFlags: 0
@@ -9349,9 +9475,10 @@ GameObject:
   - component: {fileID: 5269108774717709291}
   - component: {fileID: 4217689319384763110}
   - component: {fileID: 2832974049312658028}
+  - component: {fileID: 8908273568227152488}
   m_Layer: 0
   m_Name: OctaviCockpit_KeyboardKey_D.001
-  m_TagString: Untagged
+  m_TagString: KeyboardKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9726,6 +9853,23 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &8908273568227152488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6128348236886700912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintMaterial: {fileID: 2100000, guid: e1b7431dc2bef234b8b7d562d81030f2, type: 2}
+  fancyNotePrefab: {fileID: 0}
+  noteTag: D
+  meshRenderer: {fileID: 8254081384869307603}
+  regularMaterial: {fileID: 2100000, guid: 674565753313a4e5eb07a3ce0351a8c6, type: 2}
 --- !u!1 &6231605788927380932
 GameObject:
   m_ObjectHideFlags: 0
@@ -9863,7 +10007,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use trigger to start...
+  m_text: 'Messages: Enter here'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9949,9 +10093,10 @@ GameObject:
   - component: {fileID: 1216869067782319909}
   - component: {fileID: 5714454988866150755}
   - component: {fileID: 3538840453788940265}
+  - component: {fileID: 699417639667225320}
   m_Layer: 0
-  m_Name: OctaviCockpit_Keyboard_blackKey3_A#B.001
-  m_TagString: Untagged
+  m_Name: OctaviCockpit_Keyboard_blackKey3_A#Bb.001
+  m_TagString: KeyboardKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10326,6 +10471,23 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &699417639667225320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7079521154495162119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintMaterial: {fileID: 2100000, guid: 011aaba7227644746b64e54e91cca281, type: 2}
+  fancyNotePrefab: {fileID: 0}
+  noteTag: A#Bb
+  meshRenderer: {fileID: 5396564328988613270}
+  regularMaterial: {fileID: 2100000, guid: 40170a426c9fd4c23ac57e0e7e1af5ee, type: 2}
 --- !u!1 &7144010673444376277
 GameObject:
   m_ObjectHideFlags: 0
@@ -10586,7 +10748,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Mission: Perfect Fifth'
+  m_text: 'Mission: Enter here'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10682,8 +10844,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8273277084756233617}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.829}
-  m_LocalScale: {x: 0.0025, y: 0.0025, z: 0.0025}
+  m_LocalPosition: {x: 0, y: 0, z: 4.307}
+  m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_Children:
   - {fileID: 3838662196119416962}
   - {fileID: 9036964947526840374}
@@ -10692,7 +10854,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.1015015}
+  m_AnchoredPosition: {x: 0, y: 1.522}
   m_SizeDelta: {x: 504.0723, y: 192.5599}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8273277084756233618
@@ -10773,9 +10935,10 @@ GameObject:
   - component: {fileID: 4761620032743165538}
   - component: {fileID: 3538840454714727840}
   - component: {fileID: 4414979567801580012}
+  - component: {fileID: 7776688073523716735}
   m_Layer: 0
-  m_Name: OctaviCockpit_KeyboardKey_H.001
-  m_TagString: Untagged
+  m_Name: OctaviCockpit_KeyboardKey_B.001
+  m_TagString: KeyboardKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11150,6 +11313,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05112116, y: 0.014639378, z: 0.06510937}
   m_Center: {x: -0.0013066342, y: 0.010423064, z: -0.098323405}
+--- !u!114 &7776688073523716735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8765719610028132910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintMaterial: {fileID: 2100000, guid: 929455766c16dab429f2508a45a55e2a, type: 2}
+  fancyNotePrefab: {fileID: 0}
+  noteTag: B
+  meshRenderer: {fileID: 4020614760755141714}
+  regularMaterial: {fileID: 2100000, guid: 674565753313a4e5eb07a3ce0351a8c6, type: 2}
 --- !u!1 &8796344025388871943
 GameObject:
   m_ObjectHideFlags: 0
@@ -11167,9 +11347,10 @@ GameObject:
   - component: {fileID: 8595104055161690809}
   - component: {fileID: 2128605909626751290}
   - component: {fileID: 3538840454523297475}
+  - component: {fileID: 5816650898215767176}
   m_Layer: 0
   m_Name: OctaviCockpit_KeyboardKey_A.001
-  m_TagString: Untagged
+  m_TagString: KeyboardKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11544,6 +11725,23 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &5816650898215767176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8796344025388871943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintMaterial: {fileID: 2100000, guid: fb275e957d77d1746b18b3e0a222234d, type: 2}
+  fancyNotePrefab: {fileID: 0}
+  noteTag: A
+  meshRenderer: {fileID: 7657685609941464115}
+  regularMaterial: {fileID: 2100000, guid: 674565753313a4e5eb07a3ce0351a8c6, type: 2}
 --- !u!1 &9053233135389877341
 GameObject:
   m_ObjectHideFlags: 0
@@ -11561,9 +11759,10 @@ GameObject:
   - component: {fileID: 6892383821501645649}
   - component: {fileID: 2208948489135860880}
   - component: {fileID: 3538840453618192813}
+  - component: {fileID: 8028620309891715626}
   m_Layer: 0
   m_Name: OctaviCockpit_Keyboard_blackKey_D#Eb.001
-  m_TagString: Untagged
+  m_TagString: KeyboardKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11938,3 +12137,20 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &8028620309891715626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9053233135389877341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintMaterial: {fileID: 2100000, guid: 0100b32ff63ae114396e6da68ad78bcd, type: 2}
+  fancyNotePrefab: {fileID: 0}
+  noteTag: D#Eb
+  meshRenderer: {fileID: 2305838182615218469}
+  regularMaterial: {fileID: 2100000, guid: 40170a426c9fd4c23ac57e0e7e1af5ee, type: 2}
