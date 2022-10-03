@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Sonja/LandingPlace.unity
     guid: ebdc00d75b1ff43809dec57d47bfe594
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
@@ -21,5 +21,5 @@ EditorBuildSettings:
       type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1a4c68ca72a83449f938d669337cb305,
       type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 54983ca20360b5d4ea8dd651cf69759a,
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 809072ab6037d4fe09b186a84a58d715,
       type: 2}
