@@ -16,14 +16,17 @@ public static class UserDatabase
         connection.CreateTable<UserProgress>();
     }
 
-    public static void RegisterUser(long userID, string userName)
+    public static User AddNewUser(string userName)
     {
+        
+        int userID = GenerateRandomID();
         connection.Insert(new User
         {
             UserID = userID,
             UserName = userName
         });
 
+        return GetUser(userName);
     }
 
     public static User GetUser(string userName)
@@ -38,6 +41,16 @@ public static class UserDatabase
             // catches exceptions
             return null;
         }
+    }
+
+    public static int GenerateRandomID()
+    {
+        // note: in public release, this should not be this
+        
+        return Random.Range(1, 1000000);
+
+        // once PlayFab is set up, compare to PlayFab IDs and see if unique
+        // keep generating until unique id is generated
     }
 
 }
