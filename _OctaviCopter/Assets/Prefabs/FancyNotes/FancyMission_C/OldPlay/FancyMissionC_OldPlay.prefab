@@ -209,6 +209,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   altitude: 0.5
+  displayName: 
+  keyboardKey: {fileID: 0}
 --- !u!54 &6403269460179295290
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1290,7 +1292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2833962733811480689}
   m_Layer: 0
-  m_Name: FancyMissionC
+  m_Name: FancyMissionC_OldPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

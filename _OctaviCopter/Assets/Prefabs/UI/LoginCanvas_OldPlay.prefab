@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 4690144868572466210}
   - component: {fileID: 4690144868572466211}
   m_Layer: 5
-  m_Name: LoginCanvas
+  m_Name: LoginCanvas_OldPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

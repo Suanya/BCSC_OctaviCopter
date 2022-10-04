@@ -541,7 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintMaterial: {fileID: 2100000, guid: 7bf6eb208e66bc5409c5282fc959a5ea, type: 2}
+  hintMaterial: {fileID: 2100000, guid: 3dd0586635d244e74947111e9d5ca675, type: 2}
   fancyNotePrefab: {fileID: 0}
   noteTag: C
   meshRenderer: {fileID: 2092681159056897650}
@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintMaterial: {fileID: 2100000, guid: 5383ac58d0f690242adbcfb58fec8830, type: 2}
+  hintMaterial: {fileID: 2100000, guid: 807d50348fa74463e84b4c89c46c27cf, type: 2}
   fancyNotePrefab: {fileID: 0}
   noteTag: F
   meshRenderer: {fileID: 7659504235401587019}
@@ -2432,7 +2432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintMaterial: {fileID: 2100000, guid: 171144f9fb6ad7e49933694be28a5993, type: 2}
+  hintMaterial: {fileID: 2100000, guid: f063dcaf9511142a9967082d9bd3e250, type: 2}
   fancyNotePrefab: {fileID: 0}
   noteTag: E
   meshRenderer: {fileID: 551835797854651874}
@@ -2925,7 +2925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintMaterial: {fileID: 2100000, guid: 262126aff06f10a4297de51b9cf0b19d, type: 2}
+  hintMaterial: {fileID: 2100000, guid: 0e2e8b0e5daf2443d877c301d1e78bcc, type: 2}
   fancyNotePrefab: {fileID: 0}
   noteTag: G
   meshRenderer: {fileID: 5845446510034000815}
@@ -9865,7 +9865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintMaterial: {fileID: 2100000, guid: e1b7431dc2bef234b8b7d562d81030f2, type: 2}
+  hintMaterial: {fileID: 2100000, guid: 79ff59f08137e48568af094001f763aa, type: 2}
   fancyNotePrefab: {fileID: 0}
   noteTag: D
   meshRenderer: {fileID: 8254081384869307603}
@@ -11325,7 +11325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintMaterial: {fileID: 2100000, guid: 929455766c16dab429f2508a45a55e2a, type: 2}
+  hintMaterial: {fileID: 2100000, guid: ece517410544f4239a4d9e1437bc7ec3, type: 2}
   fancyNotePrefab: {fileID: 0}
   noteTag: B
   meshRenderer: {fileID: 4020614760755141714}
@@ -11737,7 +11737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89037937974339946a127a69014f8aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintMaterial: {fileID: 2100000, guid: fb275e957d77d1746b18b3e0a222234d, type: 2}
+  hintMaterial: {fileID: 2100000, guid: c5df250ef2aca4420bf718e0daa7e592, type: 2}
   fancyNotePrefab: {fileID: 0}
   noteTag: A
   meshRenderer: {fileID: 7657685609941464115}
