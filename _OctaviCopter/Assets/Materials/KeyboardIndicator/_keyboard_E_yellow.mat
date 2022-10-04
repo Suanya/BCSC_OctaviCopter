@@ -25,11 +25,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AnimSpeed: 1
-    - _GlitterPow: 5
-    - _NoiseScale: 1
-    - _SparkleDepth: 1
-    - _SpecPow: 24
+    - _GlitterPow: 39.6
+    - _NoiseScale: 4.46
+    - _SparkleDepth: 3.69
+    - _SpecPow: 1
     m_Colors:
-    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _SpecColor: {r: 1, g: 1, b: 0, a: 1}
+    - _Color: {r: 1, g: 0.98344165, b: 0.33490568, a: 1}
+    - _SpecColor: {r: 1, g: 0.8608516, b: 0, a: 1}
   m_BuildTextureStacks: []

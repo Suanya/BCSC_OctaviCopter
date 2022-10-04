@@ -30,6 +30,6 @@ Material:
     - _SparkleDepth: 3.69
     - _SpecPow: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.44534022, b: 0.41037738, a: 1}
+    - _Color: {r: 1, g: 0.33047166, b: 0.28773582, a: 1}
     - _SpecColor: {r: 1, g: 0.8608516, b: 0, a: 1}
   m_BuildTextureStacks: []
