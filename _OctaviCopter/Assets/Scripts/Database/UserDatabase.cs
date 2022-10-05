@@ -35,6 +35,7 @@ public static class UserDatabase
         {
             // executed until an exception is thrown or it completes successfully
             return connection.Get<User>(userName);
+            
         }
         catch
         {
