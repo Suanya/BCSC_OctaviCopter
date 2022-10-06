@@ -34,7 +34,7 @@ Shader "Unlit/RainbowHeight"
             struct Interpolators
             {
                 float2 uv : TEXCOORD0;
-                UNITY_FOG_COORDS(1)
+                
                 float4 vertex : SV_POSITION;
             };
 
@@ -75,7 +75,7 @@ Shader "Unlit/RainbowHeight"
 
                 // Create mask which changes how health changes -> across what does it change
                 float heightbarMask = _Height > i.uv.x; 
-                //clip(heightbarMask - 0.5); // transparency without sorting issues what you normally get with transparency (still writing to the zBuffer)            
+                clip(heightbarMask - 0.5); // transparency without sorting issues what you normally get with transparency (still writing to the zBuffer)             
                 float3 heightbarColor = tex2D(_MainTex, float2(_Height, i.uv.y));
                 
 
