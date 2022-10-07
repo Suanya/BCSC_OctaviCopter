@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: _greenButton
+  m_Name: _miniOctavi_A_deepBlue
   m_Shader: {fileID: 4800000, guid: 79b3dd8457d7c4a659c93cf77d36bde1, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -24,12 +24,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AnimSpeed: 0.16
+    - _AnimSpeed: 5
     - _GlitterPow: 1
-    - _NoiseScale: 1
-    - _SparkleDepth: 1
-    - _SpecPow: 6.3
+    - _NoiseScale: 5
+    - _SparkleDepth: 5
+    - _SpecPow: 46.4
     m_Colors:
-    - _Color: {r: 0, g: 0.7169812, b: 0.19774528, a: 1}
-    - _SpecColor: {r: 1, g: 1, b: 0, a: 1}
+    - _Color: {r: 0.10715558, g: 0.12804368, b: 0.5283019, a: 1}
+    - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
