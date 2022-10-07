@@ -16,6 +16,7 @@ public class SceneController : MonoBehaviour
 
     private Scene currentScene;
     private bool unloadPreviousScene;
+    private bool activeOnLoad;
 
     public InputActionReference octaviQuitReference = null;
 
@@ -47,16 +48,16 @@ public class SceneController : MonoBehaviour
     private void Start()
     {
         newSession = true;
-        instance.OnMenuSelectionInternal(SceneAction.None);
-        currentSceneAction = SceneAction.None;
+        instance.OnSceneChangeRequiredInternal(SceneAction.Login);
+        currentSceneAction = SceneAction.Login;
     }
 
-    internal static void OnMenuSelection(SceneAction newAction)
+    internal static void OnSceneChangeRequired(SceneAction newAction)
     {
-        instance.OnMenuSelectionInternal(newAction);
+        instance.OnSceneChangeRequiredInternal(newAction);
     }
 
-    private void OnMenuSelectionInternal(SceneAction newAction)
+    private void OnSceneChangeRequiredInternal(SceneAction newAction)
     {
         // Handle the different scene change scenarios
         // Note that the set up scene (containing singleton classes) is loaded first, and remains loaded throughout
@@ -66,19 +67,19 @@ public class SceneController : MonoBehaviour
                 // Should only happen at the very beginning of the game
 
                 unloadPreviousScene = false;
-                StartCoroutine(ChangeScene("Login", unloadPreviousScene));
+                StartCoroutine(ChangeScene("LoginScene", unloadPreviousScene));
 
                 return;
 
             case SceneAction.Login:
 
-                // Unload the current scene if it is not already the main menu
-                // This the only scene that can be selected while it is the currently active scene (with controller menu button)
+                // The login scene loads first and stays open
 
-                if (SceneManager.GetActiveScene().name != "Login")
+                if (SceneManager.GetActiveScene().name != "LoginScene")
                 {
-                    unloadPreviousScene = true;
-                    StartCoroutine(ChangeScene("Login", unloadPreviousScene));
+                    unloadPreviousScene = false;
+                    activeOnLoad = true;
+                    StartCoroutine(ChangeScene("LoginScene", unloadPreviousScene));
                 }
 
                 return;
@@ -92,9 +93,9 @@ public class SceneController : MonoBehaviour
 
             case SceneAction.CutScene:
 
-                unloadPreviousScene = true;
+                unloadPreviousScene = false;
                 StartCoroutine(ChangeScene("CutScene", unloadPreviousScene));
-                SoundManager.PlayMusic("CutSceneMusic");
+                //SoundManager.PlayMusic("CutSceneMusic");
 
                 return;
 
@@ -131,11 +132,11 @@ public class SceneController : MonoBehaviour
     {
         // Check the input to see if the player needs to change scene
 
-        float startValue = octaviQuitReference.action.ReadValue<float>();
-        if (startValue > 0)
-        {
-            OnMenuSelection(SceneAction.Exit);
-        }
+        //float startValue = octaviQuitReference.action.ReadValue<float>();
+        //if (startValue > 0)
+        //{
+        //    OnSceneChangeRequired(SceneAction.Exit);
+        //}
 
     }
 
@@ -148,7 +149,7 @@ public class SceneController : MonoBehaviour
         }
 
         // Load new scene
-        SceneManager.LoadScene(newScene, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(newScene, LoadSceneMode.Additive);
 
         // Wait until next frame
         yield return null;

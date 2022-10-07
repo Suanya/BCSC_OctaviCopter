@@ -32,6 +32,7 @@ public class UpdateUI : MonoBehaviour
         messageText.text = "Press trigger to start...";
         // play voice clip
     }
+
     public void InformMissionLaunched()
     {
 

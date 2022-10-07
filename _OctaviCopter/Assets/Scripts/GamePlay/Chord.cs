@@ -10,9 +10,9 @@ public class Chord : Mission
     public Note thirdNote;
     public Note fifthNote;
 
-    public override void SetUpMission(bool hintsAvailable)
+    public override void SetUpMission(GameObject scaleColumn, bool hintsAvailable)
     {
-        base.SetUpMission(hintsAvailable);
+        base.SetUpMission(scaleColumn, hintsAvailable);
 
         requiredNoteCount = 3;
         var keyboardKeys = FindObjectsOfType<KeyboardKey>();
