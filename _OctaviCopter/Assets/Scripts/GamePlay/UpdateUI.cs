@@ -15,7 +15,7 @@ public class UpdateUI : MonoBehaviour
     {
         levelManager.OnMissionSetUp += InformStartingMission;
         levelManager.OnMissionStarted += InformMissionLaunched;
-        levelManager.OnLastMissionComplete += InformLevelCompleted;
+        // levelManager.OnLastMissionComplete += InformLevelCompleted;  wasn't displaying in UI anyway; look at again if needed
     }
 
     public void InformStartingLevel(string missionName, string missionInstructions)
@@ -65,22 +65,22 @@ public class UpdateUI : MonoBehaviour
         messageText.text = $"{mission.name} Complete!";
     }
 
-    public void InformLevelCompleted()
-    {
-        Debug.Log("If no text is in messageText, it isn't due to program flow, as flow gets here");
+    //public void InformLevelCompleted()
+    //{
+    //    Debug.Log("If no text is in messageText, it isn't due to program flow, as flow gets here");
 
-        levelManager.OnMissionStarted -= InformMissionLaunched;
-        levelManager.currentMission.OnMissionCompleted -= InformMissionCompleted;
+    //    levelManager.OnMissionStarted -= InformMissionLaunched;
+    //    levelManager.currentMission.OnMissionCompleted -= InformMissionCompleted;
 
-        messageText.text = "Level Complete! Stay tuned for an unforgettable ride!!!";
-        Debug.Log($"Text '{messageText.text}' should have appeared in the UI");
+    //    messageText.text = "Level Complete! Stay tuned for an unforgettable ride!!!";
+    //    Debug.Log($"Text '{messageText.text}' should have appeared in the UI");
 
             
-    }
+    //}
 
     public void OnDisable()
     {
         levelManager.OnMissionSetUp -= InformStartingLevel;
-        levelManager.OnLastMissionComplete -= InformLevelCompleted;
+       // levelManager.OnLastMissionComplete -= InformLevelCompleted;
     }
 }

@@ -24,8 +24,8 @@ public class SceneController : MonoBehaviour
     {
         None,
         Login,
-        Tutorial,
         CutScene,
+        Tutorial,
         GamePlay,
         BoltScene,
         Exit
@@ -48,8 +48,7 @@ public class SceneController : MonoBehaviour
     private void Start()
     {
         newSession = true;
-        instance.OnSceneChangeRequiredInternal(SceneAction.Login);
-        currentSceneAction = SceneAction.Login;
+        currentSceneAction = SceneAction.None;
     }
 
     internal static void OnSceneChangeRequired(SceneAction newAction)
@@ -60,14 +59,12 @@ public class SceneController : MonoBehaviour
     private void OnSceneChangeRequiredInternal(SceneAction newAction)
     {
         // Handle the different scene change scenarios
-        // Note that the set up scene (containing singleton classes) is loaded first, and remains loaded throughout
+        // Note that the Managers scene (containing singleton classes) is loaded first, and remains loaded throughout
         switch (newAction)
         {
             case SceneAction.None:
                 // Should only happen at the very beginning of the game
-
-                unloadPreviousScene = false;
-                StartCoroutine(ChangeScene("LoginScene", unloadPreviousScene));
+                Debug.Log("Start (manager scene)");
 
                 return;
 
@@ -84,6 +81,14 @@ public class SceneController : MonoBehaviour
 
                 return;
 
+            case SceneAction.CutScene:
+
+                unloadPreviousScene = true;
+                StartCoroutine(ChangeScene("CutScene", unloadPreviousScene));
+                //SoundManager.PlayMusic("CutSceneMusic");
+
+                return;
+
             case SceneAction.Tutorial:
 
                 unloadPreviousScene = true;
@@ -91,20 +96,12 @@ public class SceneController : MonoBehaviour
 
                 return;
 
-            case SceneAction.CutScene:
-
-                unloadPreviousScene = false;
-                StartCoroutine(ChangeScene("CutScene", unloadPreviousScene));
-                //SoundManager.PlayMusic("CutSceneMusic");
-
-                return;
-
             case SceneAction.GamePlay:
                 // set the new Game flag off, so the resume button will be available to the menu next time it is loaded
                 newSession = false;
-
+                
                 unloadPreviousScene = true;   
-                StartCoroutine(ChangeScene("GamePlay", unloadPreviousScene));
+                StartCoroutine(ChangeScene("GameScene", unloadPreviousScene));
 
                 return;
 
@@ -112,7 +109,8 @@ public class SceneController : MonoBehaviour
             case SceneAction.BoltScene:
 
                 unloadPreviousScene = true;
-                StartCoroutine(ChangeScene("Credits", unloadPreviousScene));
+                //Note: this will have logic for selecting the Bolt scene related to the level when we have more than one
+                StartCoroutine(ChangeScene("BoltBase", unloadPreviousScene));
 
                 return;
 
@@ -128,18 +126,6 @@ public class SceneController : MonoBehaviour
         currentSceneAction = newAction;
     }
 
-    private void Update()
-    {
-        // Check the input to see if the player needs to change scene
-
-        //float startValue = octaviQuitReference.action.ReadValue<float>();
-        //if (startValue > 0)
-        //{
-        //    OnSceneChangeRequired(SceneAction.Exit);
-        //}
-
-    }
-
     private IEnumerator ChangeScene(string newScene, bool unloadOldScene)
     {
         // Unload previous scene if required
@@ -152,11 +138,14 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadSceneAsync(newScene, LoadSceneMode.Additive);
 
         // Wait until next frame
-        yield return null;
+        yield return new WaitForSeconds(3);
 
-        // Set new scene active
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(newScene));
+        // Set new scene current and active
+        currentScene = SceneManager.GetSceneByName(newScene);
+        SceneManager.SetActiveScene(currentScene);
 
+        if (newScene == "GameScene")
+        GameManager.instance.LevelManager = GetComponent<LevelManager>();
     }
 
 

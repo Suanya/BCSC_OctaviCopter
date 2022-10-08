@@ -1449,6 +1449,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "CutSceneControl",
+            "id": "980305a4-6a8e-4d6e-aa8f-ef5df59a1249",
+            "actions": [
+                {
+                    "name": "SkipCutScene",
+                    "type": "Button",
+                    "id": "fdeeb205-d686-47d5-896c-fa6a7ea6525d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7880fe9b-5a92-4dca-b59f-c95739777b34",
+                    "path": "<OculusTouchController>/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkipCutScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

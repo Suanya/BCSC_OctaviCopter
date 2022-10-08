@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour
     public InputActionReference startMissionReference = null;
     public UnityAction <string, string> OnMissionSetUp = null;
     public UnityAction OnMissionStarted = null;
-    public UnityAction OnLastMissionComplete = null;
+    public UnityAction <Level> OnLastMissionComplete = null;
 
     public Mission currentMission;
     public GameObject currentScaleColumn;
@@ -169,7 +169,10 @@ public class LevelManager : MonoBehaviour
         // Play reward scene
         missionPending = false;
         currentMissionIndex = 0;
-        OnLastMissionComplete?.Invoke();
+        OnLastMissionComplete?.Invoke(currentLevel);
+
+        // Save the level to the database as completed
+        
     }
 
 }
