@@ -12,5 +12,6 @@ public class Level : ScriptableObject
     public AudioClip rewardSong;
     public Mission[] missions;
     public bool hintsAvailable;
+    public int hintCooldownTime;
 
 }

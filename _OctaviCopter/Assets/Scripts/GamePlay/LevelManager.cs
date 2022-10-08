@@ -22,10 +22,12 @@ public class LevelManager : MonoBehaviour
     public Mission currentMission;
     public GameObject currentScaleColumn;
     public bool missionInProgress = false;
+    public bool hintsAvailable;
+    public int hintCooldown => currentLevel.hintCooldownTime;
 
     private int currentMissionIndex = 0;
     private bool missionPending = false;
-    private bool hintsAvailable;
+    
     private string missionInstructions;
 
     private void Awake()

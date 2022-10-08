@@ -43,7 +43,7 @@ public class Mission : ScriptableObject
         {
             if (sceneNote.CompareTag(key.noteTag))
             {
-                key.OnShowHint();
+                key.OnShowHintColours();
             }
         }
 
@@ -108,7 +108,7 @@ public class Mission : ScriptableObject
         foreach (KeyboardKey key in keyboardKeys)
         {
             {
-                key.OnHideHint();
+                key.OnHideHintColours();
             }
         }
         requiredNoteIndex = 0;

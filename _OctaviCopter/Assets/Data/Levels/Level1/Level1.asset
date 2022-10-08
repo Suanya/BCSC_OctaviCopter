@@ -24,3 +24,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c299fe33181d86649b2abf480790acb5, type: 2}
   - {fileID: 11400000, guid: 5d7ac4126e7d2864084b50185d71290a, type: 2}
   hintsAvailable: 1
+  hintCooldownTime: 4

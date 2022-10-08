@@ -1401,7 +1401,7 @@
                 {
                     "name": "",
                     "id": "a89e6dec-083e-4178-b133-9c15bcb0a7a3",
-                    "path": "<OculusTouchController>/primaryButton",
+                    "path": "<OculusTouchController>/secondaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1412,7 +1412,7 @@
                 {
                     "name": "",
                     "id": "3e6e0e1c-f15b-4807-8e57-b24921be4b59",
-                    "path": "<OculusTouchController>/secondaryButton",
+                    "path": "<OculusTouchController>/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1473,6 +1473,34 @@
                     "processors": "",
                     "groups": "",
                     "action": "SkipCutScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Tutorial",
+            "id": "373b4624-0734-469d-8c17-de8132ace7f0",
+            "actions": [
+                {
+                    "name": "ExitTutorial",
+                    "type": "Button",
+                    "id": "46815e88-9c41-4f5c-8c02-d829e70ec81f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "38972e6c-21f2-4a5f-be31-2a0b4c78371a",
+                    "path": "<OculusTouchController>/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ExitTutorial",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
