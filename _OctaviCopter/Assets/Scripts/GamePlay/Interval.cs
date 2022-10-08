@@ -9,8 +9,10 @@ public class Interval : Mission
     public Note baseNote;
     public Note intervalNote;
 
-    public override void SetUpMission(GameObject scaleColumn, bool hintsAvailable)
+    public override void SetUpMission(GameObject currentScaleColumn, bool hintsAvailable)
     {
+        scaleColumn = currentScaleColumn;
+
         base.SetUpMission(scaleColumn, hintsAvailable);
 
         requiredNoteCount = 2;

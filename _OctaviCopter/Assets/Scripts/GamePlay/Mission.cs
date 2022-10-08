@@ -27,13 +27,14 @@ public class Mission : ScriptableObject
     
     protected KeyboardKey[] keyboardKeys;
 
-    public virtual void SetUpMission(GameObject scaleColumn, bool hasHints)
+    public virtual void SetUpMission(GameObject currentScaleColumn, bool hasHints)
     {
         octaviCopter = GameObject.FindGameObjectWithTag("OctaviCopter");
         bool getInactive = true;
         sceneNotes = scaleColumn.GetComponentsInChildren<Note>(getInactive).ToList();
         keyboardKeys = FindObjectsOfType<KeyboardKey>();
         requiredNotes = new Dictionary<int, Note>();
+        scaleColumn = currentScaleColumn;
     }
 
     public virtual void ActivateHint(Note sceneNote, KeyboardKey[] keyboardKeys)
@@ -50,9 +51,6 @@ public class Mission : ScriptableObject
 
     public void CheckNote(Note note)
     {
-        Debug.Log($"Note hit: {note.name}");
-        Debug.Log($"Note required: {requiredNotes[requiredNoteIndex].name} (Index {requiredNoteIndex})");
-
         if (note == requiredNotes[requiredNoteIndex])
         {
             OnCorrectNoteHit(note);
@@ -84,6 +82,7 @@ public class Mission : ScriptableObject
             }
             else
             {
+                Debug.Log($"Scale column should have moved in front of the player");
                 scaleColumn.transform.position = new Vector3(0f, 0f, octaviCopter.transform.position.z + scaleColumnSpacing);
             }
             

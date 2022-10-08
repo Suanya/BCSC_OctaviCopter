@@ -227,6 +227,11 @@ PrefabInstance:
       propertyPath: rainbowScaleometer
       value: 
       objectReference: {fileID: 2100000, guid: cf057e8e979ae454384a3a51e09d8fd0, type: 2}
+    - target: {fileID: 5990500457207949054, guid: c1a06f7bd0206b845846a32cab70017b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6595098514856142633, guid: c1a06f7bd0206b845846a32cab70017b,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -455,7 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevel: {fileID: 11400000, guid: a9366360e34db5644a1d3cc167047296, type: 2}
-  missionSpawnSpacing: 15
+  missionSpawnSpacing: 25
   octaviCopter: {fileID: 2019809191}
   startMissionReference: {fileID: 551857907215184468, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}

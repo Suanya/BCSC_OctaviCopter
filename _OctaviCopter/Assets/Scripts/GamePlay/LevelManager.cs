@@ -123,6 +123,9 @@ public class LevelManager : MonoBehaviour
             // pause before the next note is played
             yield return new WaitForSeconds(note.effectDuration);
 
+            // deactivate to reset
+            note.visualEffectContainer.SetActive(false);
+
         }
 
     }

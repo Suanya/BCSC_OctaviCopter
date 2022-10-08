@@ -9,7 +9,7 @@ public class OctaviCopterVertical : MonoBehaviour
     public InputActionReference moveDownReference = null;
     public float speed = 1f;
     [SerializeField] Material rainbowScaleometer;
-    [SerializeField] private float totalNoteStackHeight = 16.5f;
+    [SerializeField] private float totalNoteStackHeight = 18f;
 
     private Transform thisTransform = null;
     private float startingHeight;
@@ -43,7 +43,7 @@ public class OctaviCopterVertical : MonoBehaviour
     {
         thisTransform.Translate(0, value * -1 * speed * Time.deltaTime, 0);
         // Adjust shader on Rainbow Scalometer to reflect new height
-        float height = (float)thisTransform.position.y / (totalNoteStackHeight - startingHeight) + 1;
+        float height = (float)thisTransform.position.y / (totalNoteStackHeight - startingHeight);
         rainbowScaleometer.SetFloat("_Height", height);
 
     }
