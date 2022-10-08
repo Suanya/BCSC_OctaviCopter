@@ -23,12 +23,12 @@ public class Interval : Mission
             if (sceneNote.name == baseNote.name)
             {
                 requiredNotes[0] = sceneNote;
-                //if (hintsAvailable) ActivateHint(sceneNote, keyboardKeys);
+                if (hintsAvailable) ActivateHint(sceneNote, keyboardKeys);
             }    
             if (sceneNote.name == intervalNote.name)
             {
                 requiredNotes[1] = sceneNote;
-                //if (hintsAvailable) ActivateHint(sceneNote, keyboardKeys);
+                if (hintsAvailable) ActivateHint(sceneNote, keyboardKeys);
             }
         }
 

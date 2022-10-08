@@ -9,7 +9,6 @@ using UnityEngine.InputSystem;
 public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
-    public static bool newSession;
 
     public SceneAction currentSceneAction;
     public string mainMenuButton;
@@ -47,7 +46,6 @@ public class SceneController : MonoBehaviour
     }
     private void Start()
     {
-        newSession = true;
         currentSceneAction = SceneAction.None;
     }
 
@@ -97,9 +95,7 @@ public class SceneController : MonoBehaviour
                 return;
 
             case SceneAction.GamePlay:
-                // set the new Game flag off, so the resume button will be available to the menu next time it is loaded
-                newSession = false;
-                
+
                 unloadPreviousScene = true;   
                 StartCoroutine(ChangeScene("GameScene", unloadPreviousScene));
 
@@ -147,7 +143,5 @@ public class SceneController : MonoBehaviour
         if (newScene == "GameScene")
         GameManager.instance.LevelManager = GetComponent<LevelManager>();
     }
-
-
 
 }

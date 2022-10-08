@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UpdateUI : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI missionText;
-    [SerializeField] private TextMeshProUGUI instructionText;
-    [SerializeField] private TextMeshProUGUI messageText;
+    [SerializeField] private TMP_Text missionText;
+    [SerializeField] private Text instructionText;
+    [SerializeField] private TMP_Text messageText;
     
     [SerializeField] private LevelManager levelManager;
 

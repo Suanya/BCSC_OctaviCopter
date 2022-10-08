@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.976
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.003719644, g: 0.0035179611, b: 0.0026250707, a: 0.976}
+  m_IndirectSpecularColor: {r: 0.0037232707, g: 0.00352135, b: 0.0026283206, a: 0.976}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1123,7 +1123,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 4.5904e-41, y: 1.8512039e+37, z: 4.5904e-41, w: 9.403955e-38}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -3798,6 +3798,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842253866}
   m_CullTransparentMesh: 1
+--- !u!1 &1872370986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1872370988}
+  - component: {fileID: 1872370987}
+  m_Layer: 0
+  m_Name: TutorialController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1872370987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872370986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a0d49fcd22621949a7fe630b9bab123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitTutorialReference: {fileID: 7563526617810192902, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+--- !u!4 &1872370988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872370986}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.003649984, y: 1.0315325, z: -13.7489395}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1878703805 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5744332491204230439, guid: 4c3f02b4c514e45afa8044ca947b6e42,
@@ -4238,7 +4283,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   altitude: 0
   displayName: 
-  keyboardKey: {fileID: 0}
+  visualEffectContainer: {fileID: 0}
+  effectDuration: 4
+  audioSource: {fileID: 0}
 --- !u!82 &2030354948
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5355,8 +5402,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintMaterial: {fileID: 0}
-  fancyNotePrefab: {fileID: 3225579572804893428, guid: be769823cf95348e7bd4377c55fcc065,
-    type: 3}
   noteTag: 
   meshRenderer: {fileID: 0}
   regularMaterial: {fileID: 0}
@@ -5948,7 +5993,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintMaterial: {fileID: 0}
-  fancyNotePrefab: {fileID: 0}
   noteTag: 
   meshRenderer: {fileID: 0}
   regularMaterial: {fileID: 0}
@@ -6159,8 +6203,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintMaterial: {fileID: 0}
-  fancyNotePrefab: {fileID: 6742086394515430476, guid: 21e312dc5e1644a5fa16bc5e149e1835,
-    type: 3}
   noteTag: 
   meshRenderer: {fileID: 0}
   regularMaterial: {fileID: 0}
@@ -6984,7 +7026,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintMaterial: {fileID: 0}
-  fancyNotePrefab: {fileID: 0}
   noteTag: 
   meshRenderer: {fileID: 0}
   regularMaterial: {fileID: 0}
@@ -7149,7 +7190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintMaterial: {fileID: 0}
-  fancyNotePrefab: {fileID: 0}
   noteTag: 
   meshRenderer: {fileID: 0}
   regularMaterial: {fileID: 0}
@@ -8083,7 +8123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintMaterial: {fileID: 2100000, guid: e1b7431dc2bef234b8b7d562d81030f2, type: 2}
-  fancyNotePrefab: {fileID: 0}
   noteTag: 
   meshRenderer: {fileID: 0}
   regularMaterial: {fileID: 0}
@@ -8101,7 +8140,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   altitude: 0
   displayName: 
-  keyboardKey: {fileID: 0}
+  visualEffectContainer: {fileID: 0}
+  effectDuration: 4
+  audioSource: {fileID: 0}
 --- !u!114 &3847316519961627583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8116,7 +8157,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   altitude: 0
   displayName: 
-  keyboardKey: {fileID: 0}
+  visualEffectContainer: {fileID: 0}
+  effectDuration: 4
+  audioSource: {fileID: 0}
 --- !u!114 &3847316520509980187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8131,7 +8174,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   altitude: 0
   displayName: 
-  keyboardKey: {fileID: 0}
+  visualEffectContainer: {fileID: 0}
+  effectDuration: 4
+  audioSource: {fileID: 0}
 --- !u!114 &3847316520825458775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8146,7 +8191,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   altitude: 0
   displayName: 
-  keyboardKey: {fileID: 0}
+  visualEffectContainer: {fileID: 0}
+  effectDuration: 4
+  audioSource: {fileID: 0}
 --- !u!114 &3847316520830337811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8161,7 +8208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   altitude: 0
   displayName: 
-  keyboardKey: {fileID: 0}
+  visualEffectContainer: {fileID: 0}
+  effectDuration: 4
+  audioSource: {fileID: 0}
 --- !u!114 &3847316520847487907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8176,7 +8225,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   altitude: 0
   displayName: 
-  keyboardKey: {fileID: 0}
+  visualEffectContainer: {fileID: 0}
+  effectDuration: 4
+  audioSource: {fileID: 0}
 --- !u!114 &3847316520969685608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8191,7 +8242,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   altitude: 0.5
   displayName: 
-  keyboardKey: {fileID: 0}
+  visualEffectContainer: {fileID: 0}
+  effectDuration: 4
+  audioSource: {fileID: 0}
 --- !u!320 &3884575240821065561
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -8318,7 +8371,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintMaterial: {fileID: 0}
-  fancyNotePrefab: {fileID: 0}
   noteTag: 
   meshRenderer: {fileID: 0}
   regularMaterial: {fileID: 0}
@@ -9296,7 +9348,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintMaterial: {fileID: 0}
-  fancyNotePrefab: {fileID: 0}
   noteTag: 
   meshRenderer: {fileID: 0}
   regularMaterial: {fileID: 0}
@@ -9313,8 +9364,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintMaterial: {fileID: 2100000, guid: 7bf6eb208e66bc5409c5282fc959a5ea, type: 2}
-  fancyNotePrefab: {fileID: 2833962733811480688, guid: 6f716a6fee447436c95af824e54b5ad0,
-    type: 3}
   noteTag: 
   meshRenderer: {fileID: 0}
   regularMaterial: {fileID: 0}
@@ -9343,7 +9392,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintMaterial: {fileID: 0}
-  fancyNotePrefab: {fileID: 0}
   noteTag: 
   meshRenderer: {fileID: 0}
   regularMaterial: {fileID: 0}
@@ -10930,6 +10978,8 @@ MonoBehaviour:
   moveDownReference: {fileID: 3589444923303663336, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   speed: 1.5
+  rainbowScaleometer: {fileID: 2100000, guid: cf057e8e979ae454384a3a51e09d8fd0, type: 2}
+  totalNoteStackHeight: 18
 --- !u!95 &7044086643101905226
 Animator:
   serializedVersion: 3
@@ -11096,7 +11146,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintMaterial: {fileID: 0}
-  fancyNotePrefab: {fileID: 0}
   noteTag: 
   meshRenderer: {fileID: 0}
   regularMaterial: {fileID: 0}
@@ -12243,7 +12292,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   altitude: 0.5
   displayName: 
-  keyboardKey: {fileID: 0}
+  visualEffectContainer: {fileID: 0}
+  effectDuration: 4
+  audioSource: {fileID: 0}
 --- !u!23 &7652316715601501178
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21267,7 +21318,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintMaterial: {fileID: 0}
-  fancyNotePrefab: {fileID: 0}
   noteTag: 
   meshRenderer: {fileID: 0}
   regularMaterial: {fileID: 0}
