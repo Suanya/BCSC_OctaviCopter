@@ -58,7 +58,7 @@ Shader "Unlit/RainbowHeight"
 
             float4 frag (Interpolators i) : SV_Target
             {
-                // rounded corner clipping  
+                // rounded corner clipping   
                 float2 coords = i.uv;
                 coords.x *= 8;
                 float2 pointOnLineSeg = float2 ( clamp(coords.x, 0.5, 7.5), 0.5);
@@ -67,43 +67,72 @@ Shader "Unlit/RainbowHeight"
 
                 // Boarder
                 float boarderSdf = sdf + _BoarderSize;
-    
-                float pd = fwidth(boarderSdf); // screen space partial derivate
-        
+                float pd = fwidth(boarderSdf); // screen space partial derivate  
                 float boarderMask = saturate(boarderSdf / pd);
-
 
                 // Create mask which changes how health changes -> across what does it change
                 float heightbarMask = _Height > i.uv.x; 
-                clip(heightbarMask - 0.5); // transparency without sorting issues what you normally get with transparency (still writing to the zBuffer)             
+                clip(heightbarMask - 0.5); // transparency without sorting issues what you normally get with transparency (still writing to the zBuffer)              
                 float3 heightbarColor = tex2D(_MainTex, float2(_Height, i.uv.y));
                 
 
                 // Flash if hit the right height
-                // 0.1, 0.2, 0.35, 0.4, 0.46, 0.64, 0.8, 0.89)                        
-                if(_Height == 0.1)
-                {
-                    float flash = cos(_Time.y * 4) * 0.4 + 1;
-                    heightbarColor *= flash;
-                }
-                
-                if(_Height == 0.64)
+                // (0,0.12) (0.12,0.27) (0.27, 0.42) (0.42, 0.57) (0.57, 0.72) (0.72, 0.87) (0.87, 0.92) (0.92, 1)
+
+                // C             
+                if(_Height  <= 0.12)
                 {
                     float flash = cos(_Time.y * 4) * 0.4 + 1;
                     heightbarColor *= flash;
                 }
 
-                // stop color at purple
-                if(_Height >= 0.89)
+                /*
+                // D
+                if(_Height > 0.12 && _Height < 0.27)
                 {
-                    
-                    heightbarColor = float3(0.3,0,0.9);
+                    float flash = cos(_Time.y * 4) * 0.4 + 1;
+                    heightbarColor *= flash;
                 }
+
+                // E
+                if(_Height > 0.27 && _Height < 0.42)
+                {
+                    float flash = cos(_Time.y * 4) * 0.4 + 1;
+                    heightbarColor *= flash;
+                }
+
+                // F
+                if(_Height > 0.42 && _Height < 0.57)
+                {
+                    float flash = cos(_Time.y * 4) * 0.4 + 1;
+                    heightbarColor *= flash;
+                }
+                */
+
+                // G
+                if(_Height > 0.57 && _Height < 0.72)
+                {
+                    float flash = cos(_Time.y * 4) * 0.4 + 1;
+                    heightbarColor *= flash;
+                }
+
+                /* 
+                // A
+                if(_Height > 0.72 && _Height < 0.87)
+                {
+                    float flash = cos(_Time.y * 4) * 0.4 + 1;
+                    heightbarColor *= flash;
+                }
+
+                // H
+                if(_Height > 0.87)
+                {
+                    float flash = cos(_Time.y * 4) * 0.4 + 1;
+                    heightbarColor *= flash;
+                }
+                */
 
                 return float4(heightbarColor * heightbarMask * boarderMask, 1);
-                
-
-                
             }
             ENDCG
         }
