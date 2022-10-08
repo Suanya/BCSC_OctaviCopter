@@ -15,7 +15,7 @@ MonoBehaviour:
   levelID: 1
   levelName: Lets Learn Fifths and Seconds
   missionCategory: Interval
-  missionKeyPrefab: {fileID: 2571100768473733205, guid: 699223e335078244db1ea2501098913c,
+  missionKeyPrefab: {fileID: 3037531448188656876, guid: 9a47727181b41464e9ffaf53b2716e72,
     type: 3}
   rewardSong: {fileID: 8300000, guid: 1f10f3fed7d1240eebb5f9f2a6d63099, type: 3}
   missions:
