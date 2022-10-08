@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25fb25020a458074d8d96932b6b2a9dd, type: 3}
-  m_Name: MajorSecond
+  m_Name: MajorSecond_AG
   m_EditorClassIdentifier: 
   missionID: 2
-  missionName: Major Second
+  missionName: 'Major Second: A-G'
   missionGraphic: {fileID: 0}
   scaleColumnSpacing: 15
   requiredNoteIndex: 0
-  baseNote: {fileID: 2860123181958648225, guid: bc7556603a1d8c747b721ec7fb8f9d6b,
+  baseNote: {fileID: 1409216695694627967, guid: 233076433daec2e48a41fa75d2f521b7,
     type: 3}
-  intervalNote: {fileID: 2860123181958648225, guid: c63fe2cca3f0c5646a4a8b908bec79e8,
+  intervalNote: {fileID: 4900930486386507676, guid: 649e60fb1bdef1c48a348634ac8239a8,
     type: 3}

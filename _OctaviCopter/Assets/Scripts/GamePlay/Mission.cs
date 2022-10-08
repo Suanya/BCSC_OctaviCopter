@@ -11,29 +11,30 @@ public class Mission : ScriptableObject
     public string missionName;
     public Sprite missionGraphic;
     public float scaleColumnSpacing = 15.0f;
+    
 
     public event Action OnCorrectNoteCollected;
     public event Action OnIncorrectNoteCollected;
     public event Action<Mission> OnMissionCompleted;
-
+    public Dictionary<int, Note> requiredNotes;
     public int requiredNoteIndex = 0;
 
     protected GameObject octaviCopter;
     protected GameObject scaleColumn;
+
     protected List<Note> sceneNotes;
-    
     protected int requiredNoteCount;
-    protected Dictionary<int, Note> requiredNotes;
-    private KeyboardKey[] keyboardKeys;
+    
+    protected KeyboardKey[] keyboardKeys;
 
-    public virtual void SetUpMission(bool hasHints)
+    public virtual void SetUpMission(GameObject currentScaleColumn, bool hasHints)
     {
-
         octaviCopter = GameObject.FindGameObjectWithTag("OctaviCopter");
-        scaleColumn = GameObject.FindGameObjectWithTag("ScaleColumn");
-        sceneNotes = FindObjectsOfType<Note>().ToList();
-        requiredNotes = new Dictionary<int, Note>();
+        bool getInactive = true;
+        sceneNotes = scaleColumn.GetComponentsInChildren<Note>(getInactive).ToList();
         keyboardKeys = FindObjectsOfType<KeyboardKey>();
+        requiredNotes = new Dictionary<int, Note>();
+        scaleColumn = currentScaleColumn;
     }
 
     public virtual void ActivateHint(Note sceneNote, KeyboardKey[] keyboardKeys)
@@ -42,14 +43,14 @@ public class Mission : ScriptableObject
         {
             if (sceneNote.CompareTag(key.noteTag))
             {
-                key.OnHintAvailable();
+                key.OnShowHint();
             }
         }
+
     }
 
     public void CheckNote(Note note)
     {
-        
         if (note == requiredNotes[requiredNoteIndex])
         {
             OnCorrectNoteHit(note);
@@ -75,7 +76,16 @@ public class Mission : ScriptableObject
         {
             OnCorrectNoteCollected?.Invoke();
             //move the note column ahead so it can be flown through again for the next note
-            scaleColumn.transform.position = new Vector3(0f, 0f, octaviCopter.transform.position.z + scaleColumnSpacing);
+            if (scaleColumn == null)
+            {
+                Debug.Log("Scale column is null for some reason");
+            }
+            else
+            {
+                Debug.Log($"Scale column should have moved in front of the player");
+                scaleColumn.transform.position = new Vector3(0f, 0f, octaviCopter.transform.position.z + scaleColumnSpacing);
+            }
+            
         }
     }
 
@@ -98,7 +108,7 @@ public class Mission : ScriptableObject
         foreach (KeyboardKey key in keyboardKeys)
         {
             {
-                key.OnHintUnavailable();
+                key.OnHideHint();
             }
         }
         requiredNoteIndex = 0;

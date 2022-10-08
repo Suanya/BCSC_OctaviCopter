@@ -124,6 +124,7 @@ public class Login : MonoBehaviour
     public void StartCutScene()
     {
         Debug.Log("This is where the cut scene will start playing");
+        SceneController.OnSceneChangeRequired(SceneController.SceneAction.CutScene);
     }
 
 }

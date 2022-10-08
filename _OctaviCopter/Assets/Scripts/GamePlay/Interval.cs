@@ -9,12 +9,13 @@ public class Interval : Mission
     public Note baseNote;
     public Note intervalNote;
 
-    public override void SetUpMission(bool hintsAvailable)
+    public override void SetUpMission(GameObject currentScaleColumn, bool hintsAvailable)
     {
-        base.SetUpMission(hintsAvailable);
+        scaleColumn = currentScaleColumn;
+
+        base.SetUpMission(scaleColumn, hintsAvailable);
 
         requiredNoteCount = 2;
-        var keyboardKeys = FindObjectsOfType<KeyboardKey>();
 
         foreach (Note sceneNote in sceneNotes)
         {
@@ -22,15 +23,15 @@ public class Interval : Mission
             if (sceneNote.name == baseNote.name)
             {
                 requiredNotes[0] = sceneNote;
-                if (hintsAvailable) ActivateHint(sceneNote, keyboardKeys);
-            }
-                
+                //if (hintsAvailable) ActivateHint(sceneNote, keyboardKeys);
+            }    
             if (sceneNote.name == intervalNote.name)
             {
                 requiredNotes[1] = sceneNote;
-                if (hintsAvailable) ActivateHint(sceneNote, keyboardKeys);
+                //if (hintsAvailable) ActivateHint(sceneNote, keyboardKeys);
             }
         }
+
     }
 
 }
