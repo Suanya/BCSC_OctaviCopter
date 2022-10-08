@@ -38,7 +38,7 @@ public class Login : MonoBehaviour
 
     private void Update()
     {
-        // check for reset of login
+        // check for reset of login (have logged in but name field is active, meaning player touched BACK)
         if (loginAchieved && nameInput.gameObject.activeSelf)
         {
             Debug.Log("Login bool reset");

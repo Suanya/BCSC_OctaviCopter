@@ -54,4 +54,10 @@ public static class UserDatabase
         // keep generating until unique id is generated
     }
 
+    public static string GetLastCompletedLevel(string userName)
+    {
+        return "BoltScene";
+    }
+
+
 }
