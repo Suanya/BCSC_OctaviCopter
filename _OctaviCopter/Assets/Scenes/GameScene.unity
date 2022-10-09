@@ -1033,6 +1033,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5096492939501645101, guid: 90ed51c2f285e434894d5aecea88ca04,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096492939501645102, guid: 90ed51c2f285e434894d5aecea88ca04,
+        type: 3}
+      propertyPath: levels.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096492939501645102, guid: 90ed51c2f285e434894d5aecea88ca04,
+        type: 3}
+      propertyPath: levels.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a9366360e34db5644a1d3cc167047296,
+        type: 2}
+    - target: {fileID: 5096492939501645102, guid: 90ed51c2f285e434894d5aecea88ca04,
+        type: 3}
+      propertyPath: levels.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 559b0e3fe7362dd49be66bfc7f1e9dfc,
+        type: 2}
     - target: {fileID: 5096492939501645103, guid: 90ed51c2f285e434894d5aecea88ca04,
         type: 3}
       propertyPath: m_RootOrder
@@ -1093,6 +1115,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MangersForTestOnly
       objectReference: {fileID: 0}
+    - target: {fileID: 5096492939501645104, guid: 90ed51c2f285e434894d5aecea88ca04,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90ed51c2f285e434894d5aecea88ca04, type: 3}
 --- !u!114 &1106690403 stripped
@@ -1149,15 +1176,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de533d544e97e074490e0e7921208db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevel: {fileID: 11400000, guid: a9366360e34db5644a1d3cc167047296, type: 2}
-  missionSpawnSpacing: 25
-  octaviCopter: {fileID: 2019809191}
+  missionController: {fileID: 2020598284}
   startMissionReference: {fileID: 551857907215184468, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
-  currentMission: {fileID: 0}
+  octaviCopter: {fileID: 2019809191}
   currentScaleColumn: {fileID: 0}
-  missionInProgress: 0
-  hintsAvailable: 0
+  currentLevel: {fileID: 11400000, guid: a9366360e34db5644a1d3cc167047296, type: 2}
 --- !u!4 &1343726838
 Transform:
   m_ObjectHideFlags: 0
@@ -1188,6 +1212,7 @@ MonoBehaviour:
   instructionText: {fileID: 834300969}
   messageText: {fileID: 816894953}
   levelManager: {fileID: 1343726837}
+  missionController: {fileID: 2020598284}
 --- !u!114 &1455657532 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5244546015541420540, guid: c1a06f7bd0206b845846a32cab70017b,
@@ -1218,6 +1243,53 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 195428939}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2020598282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2020598283}
+  - component: {fileID: 2020598284}
+  m_Layer: 0
+  m_Name: Mission
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2020598283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020598282}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0034629107, y: 1.8911853, z: 6.169129}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2020598284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020598282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ffcbdeafaec4434799a20c3a3302e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 1343726837}
+  currentMission: {fileID: 0}
+  requiredNoteIndex: 0
+  missionInstructions: 
 --- !u!114 &2129912261 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2076558568766832985, guid: c1a06f7bd0206b845846a32cab70017b,

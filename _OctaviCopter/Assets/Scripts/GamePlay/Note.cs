@@ -23,8 +23,8 @@ public class Note : MonoBehaviour
     {
         if (other.CompareTag("OctaviCopter"))
         {
-            Debug.Log($"{gameObject.name} hit; checking note");
             NoteHitActivities();
+
         }
 
     }
@@ -36,16 +36,20 @@ public class Note : MonoBehaviour
         audioSource.PlayOneShot(audioSource.clip);
         // maybe haptic feedback here?
         OnNoteCollected?.Invoke(this);
+
     }
 
     public void TurnOnHintEffect()
     {
-        // TODO: move this into a coroutine with a flag to prevent multiple notes at once
+        Debug.Log($"Activating {gameObject.name}; currently active? {visualEffectContainer.activeSelf}");
         visualEffectContainer.SetActive(true);
+        
     }
 
     public void TurnOffHintEffect()
     {
         visualEffectContainer.SetActive(false);
+        Debug.Log($"Note {gameObject.name} deactivated");
+
     }
 }

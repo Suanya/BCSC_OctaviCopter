@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class KeyboardKey : MonoBehaviour
@@ -18,18 +17,17 @@ public class KeyboardKey : MonoBehaviour
     private void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
-        scaleNotes = FindObjectsOfType<Note>();
 
     }
     public void OnPlayHint()
     {
         // play the fancy note corresponding to this key 
 
-        if (levelManager.hintsAvailable && noteInMission)
+        if (levelManager.currentLevel.hintsAvailable && noteInMission)
         {
             // find the note if we haven't already
             if (scaleTwin == null) scaleTwin = FindTwinFancyNote();
-            StartCoroutine(PlayHintNote(levelManager.hintCooldown));
+            StartCoroutine(PlayHintNote(levelManager.currentLevel.hintCooldownTime));
 
         }
 
@@ -69,6 +67,10 @@ public class KeyboardKey : MonoBehaviour
 
     private Note FindTwinFancyNote()
     {
+        if(scaleNotes == null)
+        {
+            scaleNotes = FindObjectsOfType<Note>();
+        }
 
         foreach (Note note in scaleNotes)
         {

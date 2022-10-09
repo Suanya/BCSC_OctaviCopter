@@ -1,150 +1,92 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
-using System;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
-    // use for testing until database is created
-    [SerializeField] private Level currentLevel;
-    [SerializeField] private float missionSpawnSpacing = 15f;
-    [SerializeField] private GameObject octaviCopter;
+    [SerializeField] private Mission missionController;
 
     public InputActionReference startMissionReference = null;
-    public UnityAction <string, string> OnMissionSetUp = null;
-    public UnityAction OnMissionStarted = null;
-    public UnityAction <Level> OnLastMissionComplete = null;
+    public UnityAction <MissionDef> NewMissionToLoad = null;
+    public UnityAction MissionCanStart = null;
+    public UnityAction OnLevelComplete = null;
 
-    public Mission currentMission;
+    public GameObject octaviCopter;
     public GameObject currentScaleColumn;
-    public bool missionInProgress = false;
-    public bool hintsAvailable;
-    public int hintCooldown => currentLevel.hintCooldownTime;
+    public LevelDef currentLevel;
 
-    private int currentMissionIndex = 0;
+    private int missionIndex = 0;
+
+    private bool missionInProgress = false;
     private bool missionPending = false;
-    
-    private string missionInstructions;
 
     private void Awake()
     {
-        // Get the next level the user should be at: deserialize when database is set up
-        // currentLevel = GetLevelFromDatabase
-
+        // Set up the level with its properties and missions
+        currentLevel = GameManager.instance.GetCurrentLevel(this);
         currentScaleColumn = SpawnScaleColumn();
 
     }
     private void Start()
     {
-        // find and set up the first mission (FindMission calls specific set up for mission type)
-        currentMission = FindMission();
-
-        // inform anyone who cares that mission is ready to start
-        missionPending = true;
-        OnMissionSetUp?.Invoke(currentMission.name, missionInstructions);
-
-        // wait for word that the mission is complete
-        currentMission.OnMissionCompleted += CheckMission;
+        missionController.OnMissionSetUp += PrepareToStartMission;
+        NewMissionToLoad?.Invoke(currentLevel.missions[missionIndex]);
+        
     }
 
     private void Update()
     {
+        // check for user pressing trigger to start mission
+
         float startValue = startMissionReference.action.ReadValue<float>();
         if (!missionInProgress && missionPending && startValue > 0)
         {
-            missionInProgress = true;
             StartMission();
+            missionInProgress = true;
+            missionPending = false;
+
         }
     }
 
     private GameObject SpawnScaleColumn()
     {
+        float missionSpawnSpacing = currentLevel.missions[missionIndex].scaleColumnSpacing;
         Vector3 spawnPoint = new Vector3(0, 0, octaviCopter.transform.position.z + missionSpawnSpacing);
         return Instantiate(currentLevel.missionKeyPrefab, spawnPoint, Quaternion.identity);
       
     }
 
-    private Mission FindMission()
+    public void PrepareToStartMission()
     {
-        hintsAvailable = currentLevel.hintsAvailable;
-        switch (currentLevel.missionCategory)
-        {
-            case "Interval":
-                var intervalMission = (Interval)currentLevel.missions[currentMissionIndex];
-                intervalMission.SetUpMission(currentScaleColumn, hintsAvailable);
-                missionInstructions = $"Base note: {intervalMission.baseNote.displayName}  " +
-                                      $"Interval note: {intervalMission.intervalNote.displayName}";
-                break;
+        missionPending = true;
 
-            case "Chord":
-                var chordMission = (Chord)currentLevel.missions[currentMissionIndex];
-                chordMission.SetUpMission(currentScaleColumn, hintsAvailable);
-                missionInstructions = $"Base note: {chordMission.baseNote.displayName}  " +
-                                      $"Third note: {chordMission.thirdNote.displayName}  " +
-                                      $"Fifth note: {chordMission.fifthNote.displayName}";
-                break;
-
-            case "Rhythm":
-                missionInstructions = ("Stuff for rhythms is not written yet");
-                break;
-
-        }
-
-        float columnSpacing = currentLevel.missions[currentMissionIndex].scaleColumnSpacing;
-        currentScaleColumn.transform.position = new Vector3(0f, 0f, octaviCopter.transform.position.z + columnSpacing);
-
-        return currentLevel.missions[currentMissionIndex];
     }
 
     public void StartMission()
     {
-        if (hintsAvailable)
-        {
-            StartCoroutine(PlayMissionNotes());
-        }
-
-        OnMissionStarted?.Invoke();
-    }
-
-    private IEnumerator PlayMissionNotes()
-    {
-        for (int i = 0; i < currentMission.requiredNotes.Count; i++)
-        
-        {
-            Note note = currentMission.requiredNotes[i];
-            // activate note fx
-            note.visualEffectContainer.SetActive(true);
-
-            // play the octaviTone
-            note.audioSource.Play();
-
-            // pause before the next note is played
-            yield return new WaitForSeconds(note.effectDuration);
-
-            // deactivate to reset
-            note.visualEffectContainer.SetActive(false);
-
-        }
-
-    }
+        missionInProgress = true;
+        MissionCanStart?.Invoke();
+        missionController.OnMissionCompleted += CheckMissionStatus;
     
-    private void CheckMission(Mission mission)
-    {
+    }
 
-        currentMission.OnMissionCompleted -= CheckMission;
-        currentMissionIndex++;
+    private void CheckMissionStatus()
+    {
+        missionController.OnMissionCompleted -= CheckMissionStatus;
+        missionIndex++;
         missionInProgress = false;
         missionPending = false;
 
         // check to see if there are any more missions
-        if (currentMissionIndex == currentLevel.missions.Length)
+        if (missionIndex == currentLevel.missions.Length)
         {
             // no more missions - level is finished!!
             OnLevelComplete();
+            missionPending = false;
+            missionIndex = 0;
+            OnLevelComplete?.Invoke();
+
         }
         else
         {
@@ -156,25 +98,13 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator StartSubsequentMission(int delay)
     {
+        currentScaleColumn.transform.position = new Vector3(0f, 0f, octaviCopter.transform.position.z + currentLevel.missions[missionIndex].scaleColumnSpacing);
 
         yield return new WaitForSeconds(delay);
 
-        currentMission = FindMission();
-        missionPending = true;
-        OnMissionSetUp?.Invoke(currentMission.name, missionInstructions);
-        currentMission.OnMissionCompleted += CheckMission;
-        
-    }
+        NewMissionToLoad?.Invoke(currentLevel.missions[missionIndex]);
+        missionController.OnMissionSetUp += PrepareToStartMission;
 
-    private void OnLevelComplete()
-    {
-        // Play reward scene
-        missionPending = false;
-        currentMissionIndex = 0;
-        OnLastMissionComplete?.Invoke(currentLevel);
-
-        // Save the level to the database as completed
-        
     }
 
 }
