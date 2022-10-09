@@ -29,24 +29,14 @@ Shader "Unlit/OctaviRefraction"
     SubShader
     {
         Tags { "RenderType"="Transparent" "Queue"="Transparent" }
-		LOD 100
-
-        /*
-		GrabPass 
-		{
-			"_BackgroundTexture"
-		}
-        */
 
         Pass
         {
-            //Tags { "LightMode" = "ForwardBase" }
-            CGPROGRAM
+            
+            CGPROGRAM 
             #pragma vertex vert
 			#pragma fragment frag
 			#pragma shader_feature USE_CUBE_REFRACTION
-			// make fog work
-			#pragma multi_compile_fog
 
             #include "UnityCG.cginc"
 			#include "Simplex3D.cginc"
@@ -119,17 +109,18 @@ Shader "Unlit/OctaviRefraction"
                 // Attention, Attention, please! Decide wheter to use grabPass (frenchLift aka incorrect) OR a cubeMap (can be realtime, too) for refRaction  
      #ifdef USE_CUBE_REFRACTION
                 
-                float3 refrDir = refract( viewDir, normal, 1/_RefrId ); // calculate refraction direction based on cubeMap (s.o.)   
+                float3 refrDir = refract( viewDir, normal, 1/_RefrId ); // calculate refraction direction based on cubeMap (s.o.)    
                 half4 refrData = UNITY_SAMPLE_TEXCUBE_LOD(unity_SpecCube0, refrDir,_RefrRoughness);   
                 refrColor = DecodeHDR (refrData, unity_SpecCube0_HDR);
 
                 // Alright then, do the donald and duck!
      #else
-                float4 screenPos = i.grabPos; // get screenspace for GrabPass
+                float4 screenPos = i.grabPos; // get screenspace for GrabPass 
                 float2 offset = normalize(mul(UNITY_MATRIX_V,float4(normal, 0))).xy * _RefrId * 10; // create lookUp offSet based on viewspace normals 
                 offset.x *= _ScreenParams.y/_ScreenParams.x; // make sure the params is in square aspect   
                 screenPos.xy += offset; // apply offSet
-                refrColor = tex2Dproj(_BackgroundTexture, screenPos).rgb;          
+                refrColor = tex2Dproj(_BackgroundTexture, screenPos).rgb;
+   
      #endif
 
                 // Sparkles
@@ -137,11 +128,10 @@ Shader "Unlit/OctaviRefraction"
 
                 
                 fixed4 col = tex2D(_MainTex, i.uv) * _Color; // sample the technoTexture
-                col.rgb *= refrColor.rgb; // apply refRrection
+                col.rgb *= refrColor.rgb; // apply refRrection 
                 col.rgb =  lerp(skyColor * _SpecColor, col, 1-rim); // apply refLection
                 col += _SpecColor * (saturate(sparkles * glitterSpecular * 5) + specular); // apply Specular and Sparkles for some Glamour 
-                UNITY_APPLY_FOG(i.fogCoord, col);
-                
+              
                 return col;
 
             }
