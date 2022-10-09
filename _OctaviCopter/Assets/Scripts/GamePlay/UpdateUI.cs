@@ -11,11 +11,12 @@ public class UpdateUI : MonoBehaviour
     [SerializeField] private TMP_Text messageText;
     
     [SerializeField] private LevelManager levelManager;
+    [SerializeField] private Mission missionController;
 
     private void OnEnable()
     {
-        levelManager.OnMissionSetUp += InformStartingMission;
-        levelManager.OnMissionStarted += InformMissionLaunched;
+        missionController.OnMissionSetUp += InformStartingMission;
+        levelManager.MissionCanStart += InformMissionLaunched;
         // levelManager.OnLastMissionComplete += InformLevelCompleted;  wasn't displaying in UI anyway; look at again if needed
     }
 
@@ -25,11 +26,11 @@ public class UpdateUI : MonoBehaviour
         
     }
 
-    public void InformStartingMission(string missionName, string missionInstructions)
+    public void InformStartingMission()
     {
         // update mission info
-        missionText.text = $"Mission: {missionName}";
-        instructionText.text = missionInstructions;
+        missionText.text = $"Mission: {missionController.currentMission.missionName}";
+        instructionText.text = missionController.missionInstructions;
         messageText.text = "Press trigger to start...";
         // play voice clip
     }
@@ -37,9 +38,9 @@ public class UpdateUI : MonoBehaviour
     public void InformMissionLaunched()
     {
 
-        levelManager.currentMission.OnCorrectNoteCollected += InformCorrectNote;
-        levelManager.currentMission.OnIncorrectNoteCollected += InformIncorrectNote;
-        levelManager.currentMission.OnMissionCompleted += InformMissionCompleted;
+        missionController.OnCorrectNoteCollected += InformCorrectNote;
+        missionController.OnIncorrectNoteCollected += InformIncorrectNote;
+        missionController.OnMissionCompleted += InformMissionCompleted;
 
         messageText.text = "Good luck!";
         // play voice clip
@@ -59,29 +60,11 @@ public class UpdateUI : MonoBehaviour
         // play voice clip
     }
 
-    public void InformMissionCompleted(Mission mission)
+    public void InformMissionCompleted()
     {
-        levelManager.currentMission.OnCorrectNoteCollected -= InformCorrectNote;
-        levelManager.currentMission.OnIncorrectNoteCollected -= InformIncorrectNote;
-        messageText.text = $"{mission.name} Complete!";
+        missionController.OnCorrectNoteCollected -= InformCorrectNote;
+        missionController.OnIncorrectNoteCollected -= InformIncorrectNote;
+        messageText.text = $"{missionController.name} Complete!";
     }
 
-    //public void InformLevelCompleted()
-    //{
-    //    Debug.Log("If no text is in messageText, it isn't due to program flow, as flow gets here");
-
-    //    levelManager.OnMissionStarted -= InformMissionLaunched;
-    //    levelManager.currentMission.OnMissionCompleted -= InformMissionCompleted;
-
-    //    messageText.text = "Level Complete! Stay tuned for an unforgettable ride!!!";
-    //    Debug.Log($"Text '{messageText.text}' should have appeared in the UI");
-
-            
-    //}
-
-    public void OnDisable()
-    {
-        levelManager.OnMissionSetUp -= InformStartingLevel;
-       // levelManager.OnLastMissionComplete -= InformLevelCompleted;
-    }
 }

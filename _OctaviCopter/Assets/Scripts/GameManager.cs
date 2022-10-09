@@ -5,10 +5,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public LevelDef[] levels;
     public bool isNewUser;
-    public LevelManager LevelManager;
+    public string rewardSceneName => levels[currentLevelIndex].rewardSceneName;
 
-    //public Level lastFinishedLevel => UserProgress.Something to get last completed level
+    private int currentLevelIndex = 0;
+    //public LevelDef lastFinishedLevel => UserProgress.Something to get last completed level
 
     private void Awake()
     {
@@ -21,25 +23,35 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
 
-        
     }
 
     private void Start()
     {
-        Debug.Log("Game manager triggering scene change to Login");
-        SceneController.OnSceneChangeRequired(SceneController.SceneAction.Login);
+        //Debug.Log("Game manager triggering scene change to Login");
+       SceneController.OnSceneChangeRequired(SceneController.SceneAction.Login);
     }
 
-    public void OnLevelStarted()
+    public LevelDef GetCurrentLevel(LevelManager levelRequester)
     {
-        //TODO: Add logic to play more than one round of levels
-        LevelManager.OnLastMissionComplete += OnLevelCompleted;
+        levelRequester.OnLevelComplete += PlayRewardScene;
+        return levels[currentLevelIndex];
     }
 
-    public void OnLevelCompleted(Level level)
+    public void PlayRewardScene()
     {
-        // for now, only have one scene, so just call it; add choice logic as a TODO
+        
+        // open the bolt scene: scene controller will read name
         SceneController.OnSceneChangeRequired(SceneController.SceneAction.BoltScene);
+
+        // Saves the level as completed in the database
+
+        // goto next level
+        currentLevelIndex++;
+        if (currentLevelIndex == levels.Length)
+        {
+            // TODO: Get back to exit scene?
+            Debug.Log("All levels have been played!!");
+        }
     }
 
 }

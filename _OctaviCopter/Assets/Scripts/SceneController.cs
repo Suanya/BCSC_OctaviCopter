@@ -105,8 +105,9 @@ public class SceneController : MonoBehaviour
             case SceneAction.BoltScene:
 
                 unloadPreviousScene = true;
+                string sceneName = GameManager.instance.rewardSceneName;
                 //Note: this will have logic for selecting the Bolt scene related to the level when we have more than one
-                StartCoroutine(ChangeScene("BoltBase", unloadPreviousScene));
+                StartCoroutine(ChangeScene(sceneName, unloadPreviousScene));
 
                 return;
 
@@ -140,8 +141,6 @@ public class SceneController : MonoBehaviour
         currentScene = SceneManager.GetSceneByName(newScene);
         SceneManager.SetActiveScene(currentScene);
 
-        if (newScene == "GameScene")
-        GameManager.instance.LevelManager = GetComponent<LevelManager>();
     }
 
 }
