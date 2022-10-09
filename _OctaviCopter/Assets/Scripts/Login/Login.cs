@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Login : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI welcomeText;
+    [SerializeField] private TextMeshProUGUI debugText;
     [SerializeField] private TMP_InputField nameInput;
     [SerializeField] private MeshRenderer meshRenderer;
 
@@ -21,6 +22,7 @@ public class Login : MonoBehaviour
         if (PlayerPrefs.HasKey("LastUser"))
         {
             Debug.Log("LastUser exists in PlayerPrefs");
+            debugText.text = "LastUser exists in PlayerPrefs";
             // present the welcome back message (pre-load the PlayerPrefs userName)
             nameInput.gameObject.SetActive(false);
             welcomeText.gameObject.SetActive(true);
@@ -30,6 +32,7 @@ public class Login : MonoBehaviour
         else
         {
             Debug.Log("LastUser does NOT exist in PlayerPrefs");
+            debugText.text = "LastUser does NOT exist in PlayerPrefs";
             // present the input for the player to log in
             nameInput.gameObject.SetActive(true);
             welcomeText.gameObject.SetActive(false);
@@ -42,6 +45,7 @@ public class Login : MonoBehaviour
         if (loginAchieved && nameInput.gameObject.activeSelf)
         {
             Debug.Log("Login bool reset");
+            debugText.text = "Login bool reset";
             loginAchieved = false;
         }
     }
@@ -56,7 +60,7 @@ public class Login : MonoBehaviour
             if (loginAchieved)
             {
                 Debug.Log($"Login achieved: Goto cutscene start method");
-                StartCutScene();
+                //StartCutScene();
                 
             }
             else
@@ -85,22 +89,36 @@ public class Login : MonoBehaviour
 
     public void AttemptLogin()
     {
+        
         // check to see if name is in the database
         currentUser = UserDatabase.GetUser(tempUserName);
 
         if (currentUser == null)            // user is new
         {
+            string cumulativeText = "User was initially null";
+            debugText.text = cumulativeText;
             // tell the Game Manager (so the cut scene will not be skippable)
             GameManager.instance.isNewUser = true;
 
             // Add the user
             currentUser = UserDatabase.AddNewUser(tempUserName);
 
-            //Welcome with option to click to re-enter name (in case they misspelled and shouldn't be new)
-            welcomeMessage = $"Welcome, {currentUser.UserName}! Touch BACK to change name if this is not your first time, or touch START to begin";
+            if(currentUser == null)
+            {
+                cumulativeText += "; user is still null";
+                
+            }
+            else
+            {
+                cumulativeText += "; user is now found";
+                //Welcome with option to click to re-enter name (in case they misspelled and shouldn't be new)
+                welcomeMessage = $"Welcome, {currentUser.UserName}! Touch BACK to change name if this is not your first time, or touch START to begin";
+            }
+            debugText.text = cumulativeText;
         }
         else
         {
+            debugText.text = "User already in database";
             // tell the Game Manager (so the cut scene will be skippable)
             GameManager.instance.isNewUser = false;
 
@@ -124,6 +142,7 @@ public class Login : MonoBehaviour
     public void StartCutScene()
     {
         Debug.Log("This is where the cut scene will start playing");
+        debugText.text = "This is where the cut scene will start playing";
         SceneController.OnSceneChangeRequired(SceneController.SceneAction.CutScene);
     }
 

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb25020a458074d8d96932b6b2a9dd, type: 3}
+  m_Name: MajorSecond_AG
+  m_EditorClassIdentifier: 
+  missionName: Major Second A G
+  missionGraphic: {fileID: 0}
+  scaleColumnSpacing: 15
+  typeName: Interval
+  baseNote: {fileID: 1409216695694627967, guid: 233076433daec2e48a41fa75d2f521b7,
+    type: 3}
+  intervalNote: {fileID: 4900930486386507676, guid: 649e60fb1bdef1c48a348634ac8239a8,
+    type: 3}

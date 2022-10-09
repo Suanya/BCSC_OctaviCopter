@@ -7,6 +7,7 @@ using System.Linq;
 public class Mission : MonoBehaviour
 {
     [SerializeField] private LevelManager levelManager;
+
     public MissionDef currentMission;
 
     public event Action OnMissionSetUp;

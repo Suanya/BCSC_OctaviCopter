@@ -28,11 +28,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         //Debug.Log("Game manager triggering scene change to Login");
-       SceneController.OnSceneChangeRequired(SceneController.SceneAction.Login);
+       // SceneController.OnSceneChangeRequired(SceneController.SceneAction.Login);
     }
 
     public LevelDef GetCurrentLevel(LevelManager levelRequester)
     {
+        // subscribe to the requester so reward scene can be played when finished
         levelRequester.OnLevelComplete += PlayRewardScene;
         return levels[currentLevelIndex];
     }

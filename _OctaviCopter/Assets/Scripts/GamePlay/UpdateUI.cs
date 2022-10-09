@@ -29,10 +29,14 @@ public class UpdateUI : MonoBehaviour
     public void InformStartingMission()
     {
         // update mission info
-        missionText.text = $"Mission: {missionController.currentMission.missionName}";
-        instructionText.text = missionController.missionInstructions;
-        messageText.text = "Press trigger to start...";
-        // play voice clip
+
+        {
+            missionText.text = $"Mission: {missionController.currentMission.missionName}";
+            instructionText.text = missionController.missionInstructions;
+            messageText.text = "Press trigger to start...";
+            // play voice clip
+        }
+
     }
 
     public void InformMissionLaunched()

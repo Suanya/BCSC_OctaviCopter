@@ -132,6 +132,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 169233053073096982, guid: c1a06f7bd0206b845846a32cab70017b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1137514830246280261, guid: c1a06f7bd0206b845846a32cab70017b,
         type: 3}
       propertyPath: m_text
@@ -580,7 +585,7 @@ PrefabInstance:
     - target: {fileID: 4239735283699642670, guid: c1a06f7bd0206b845846a32cab70017b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4239735283699642670, guid: c1a06f7bd0206b845846a32cab70017b,
         type: 3}
@@ -752,12 +757,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6697583939678043808, guid: c1a06f7bd0206b845846a32cab70017b,
+        type: 3}
+      propertyPath: m_Name
+      value: OldMessages
+      objectReference: {fileID: 0}
     - target: {fileID: 6830370926114080201, guid: c1a06f7bd0206b845846a32cab70017b,
         type: 3}
       propertyPath: m_text
       value: 'Mission: Goes here'
       objectReference: {fileID: 0}
     - target: {fileID: 7993108492940254877, guid: c1a06f7bd0206b845846a32cab70017b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269907768342405885, guid: c1a06f7bd0206b845846a32cab70017b,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -947,7 +962,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 2.0448e-41, z: 3.59e-43, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -1036,7 +1051,17 @@ PrefabInstance:
     - target: {fileID: 5096492939501645101, guid: 90ed51c2f285e434894d5aecea88ca04,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096492939501645101, guid: 90ed51c2f285e434894d5aecea88ca04,
+        type: 3}
+      propertyPath: currentSceneAction
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096492939501645102, guid: 90ed51c2f285e434894d5aecea88ca04,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5096492939501645102, guid: 90ed51c2f285e434894d5aecea88ca04,
         type: 3}
@@ -1047,8 +1072,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levels.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: a9366360e34db5644a1d3cc167047296,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 5096492939501645102, guid: 90ed51c2f285e434894d5aecea88ca04,
         type: 3}
       propertyPath: levels.Array.data[1]
@@ -1058,7 +1082,7 @@ PrefabInstance:
     - target: {fileID: 5096492939501645103, guid: 90ed51c2f285e434894d5aecea88ca04,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5096492939501645103, guid: 90ed51c2f285e434894d5aecea88ca04,
         type: 3}
@@ -1118,7 +1142,7 @@ PrefabInstance:
     - target: {fileID: 5096492939501645104, guid: 90ed51c2f285e434894d5aecea88ca04,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90ed51c2f285e434894d5aecea88ca04, type: 3}
@@ -1181,7 +1205,7 @@ MonoBehaviour:
     type: 3}
   octaviCopter: {fileID: 2019809191}
   currentScaleColumn: {fileID: 0}
-  currentLevel: {fileID: 11400000, guid: a9366360e34db5644a1d3cc167047296, type: 2}
+  currentLevel: {fileID: 0}
 --- !u!4 &1343726838
 Transform:
   m_ObjectHideFlags: 0
@@ -1194,7 +1218,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1343726839
 MonoBehaviour:
@@ -1272,7 +1296,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2020598284
 MonoBehaviour:

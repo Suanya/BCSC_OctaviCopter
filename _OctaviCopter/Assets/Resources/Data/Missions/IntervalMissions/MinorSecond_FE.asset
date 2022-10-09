@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fb25020a458074d8d96932b6b2a9dd, type: 3}
   m_Name: MinorSecond_FE
   m_EditorClassIdentifier: 
-  missionID: 0
-  missionName: 'Minor Second: F-E'
+  missionName: Minor Second FE
   missionGraphic: {fileID: 0}
   scaleColumnSpacing: 15
-  requiredNoteIndex: 0
+  typeName: Interval
   baseNote: {fileID: 9040308595963119244, guid: 65e0c5f1544c51b428c3ca50d73bdf99,
     type: 3}
   intervalNote: {fileID: 7643505610326006577, guid: b27d2fa49c527494c85a4d937e8989e7,

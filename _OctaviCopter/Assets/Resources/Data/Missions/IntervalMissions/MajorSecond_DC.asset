@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fb25020a458074d8d96932b6b2a9dd, type: 3}
   m_Name: MajorSecond_DC
   m_EditorClassIdentifier: 
-  missionID: 0
-  missionName: 'Major Second: D-C'
+  missionName: Major Second DC
   missionGraphic: {fileID: 0}
   scaleColumnSpacing: 15
-  requiredNoteIndex: 0
+  typeName: Interval
   baseNote: {fileID: 8705401604895133758, guid: 82df16af200c46345a958b5654b86b83,
     type: 3}
   intervalNote: {fileID: 8322870775554013872, guid: b1a921dc845536748b00bf8336339bf7,

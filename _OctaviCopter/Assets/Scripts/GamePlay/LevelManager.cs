@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+// remove TMPro when debugging dome
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {

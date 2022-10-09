@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c167c9e14d550d45994e3376d4b5fdc, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  levelID: 1
-  levelName: Lets Learn Fifths and Seconds
+  levelID: 0
+  levelName: Perfect Fifths
   missionCategory: Interval
   missionKeyPrefab: {fileID: 3037531448188656876, guid: 9a47727181b41464e9ffaf53b2716e72,
     type: 3}
-  rewardSong: {fileID: 8300000, guid: 1f10f3fed7d1240eebb5f9f2a6d63099, type: 3}
+  rewardSceneName: BoltBase
   missions:
-  - {fileID: 11400000, guid: 307fc638a1b0cc34888b80c270f03336, type: 2}
-  - {fileID: 11400000, guid: 317ef726a8a06b44880c769f6e3764a3, type: 2}
-  - {fileID: 11400000, guid: c299fe33181d86649b2abf480790acb5, type: 2}
-  - {fileID: 11400000, guid: 5d7ac4126e7d2864084b50185d71290a, type: 2}
-  hintsAvailable: 1
-  hintCooldownTime: 4
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  hintsAvailable: 0
+  hintCooldownTime: 0
