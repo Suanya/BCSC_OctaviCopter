@@ -106,7 +106,7 @@ Shader "Unlit/OctaviRefraction"
 
                 half3 refrColor;
 
-                // Attention, Attention, please! Decide wheter to use grabPass (frenchLift aka incorrect) OR a cubeMap (can be realtime, too) for refRaction  
+                // Attention, Attention, please! Decide wheter to use grabPass (frenchLift aka 'not so nice') OR a cubeMap (can be realtime, too) for refRaction    
      #ifdef USE_CUBE_REFRACTION
                 
                 float3 refrDir = refract( viewDir, normal, 1/_RefrId ); // calculate refraction direction based on cubeMap (s.o.)    
