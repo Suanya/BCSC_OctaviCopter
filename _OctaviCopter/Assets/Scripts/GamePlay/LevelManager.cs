@@ -39,16 +39,15 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        // check for user pressing trigger to start mission
+        // check for user pressing trigger to start mission (keep for testing)
 
         float startValue = startMissionReference.action.ReadValue<float>();
         if (!missionInProgress && missionPending && startValue > 0)
         {
             StartMission();
-            missionInProgress = true;
-            missionPending = false;
 
         }
+
     }
 
     private GameObject SpawnScaleColumn()
@@ -63,14 +62,25 @@ public class LevelManager : MonoBehaviour
     {
         missionPending = true;
 
+
     }
 
     public void StartMission()
     {
-        missionInProgress = true;
-        MissionCanStart?.Invoke();
-        missionController.OnMissionCompleted += CheckMissionStatus;
+        if(!missionInProgress && missionPending)
+        {
+            missionInProgress = true;
+            missionPending = false;
+            MissionCanStart?.Invoke();
+            missionController.OnMissionCompleted += CheckMissionStatus;
+        }
+        
     
+    }
+
+    public void EndMission()
+    {
+        Application.Quit();
     }
 
     private void CheckMissionStatus()

@@ -1,10 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class KeyboardKey : MonoBehaviour
 {
     public Material hintMaterial;
     public string noteTag;
+    public UnityAction hintKeyPlayed;
 
     [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private Material regularMaterial;
@@ -32,6 +34,14 @@ public class KeyboardKey : MonoBehaviour
         }
 
     }
+
+    public void OnPlayTutorialHint(int coolDownTime)
+    {
+        if (scaleTwin == null) scaleTwin = FindTwinFancyNote();
+        StartCoroutine(PlayHintNote(coolDownTime));
+        hintKeyPlayed?.Invoke();
+    }
+
     public IEnumerator PlayHintNote(int coolDownTime)
     {
         if (scaleTwin != null)
@@ -83,7 +93,12 @@ public class KeyboardKey : MonoBehaviour
         return null;
     }
 
-    // Note for next time I think I need to code the notes  audio playing
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision happened with F key");
+        hintKeyPlayed?.Invoke();
+    }
+    // Note for next time I think I need to code the notes' audio playing
     // The notes are played as part of the XR Grab Interactable component
 
 }

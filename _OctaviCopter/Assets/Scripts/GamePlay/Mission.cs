@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Linq;
+using UnityEngine.Events;
 
 public class Mission : MonoBehaviour
 {
@@ -10,10 +11,11 @@ public class Mission : MonoBehaviour
 
     public MissionDef currentMission;
 
-    public event Action OnMissionSetUp;
-    public event Action OnCorrectNoteCollected;
-    public event Action OnIncorrectNoteCollected;
-    public event Action OnMissionCompleted;
+    public UnityAction OnMissionSetUp;
+    public UnityAction OnCorrectNoteCollected;
+    public UnityAction OnIncorrectNoteCollected;
+    public UnityAction OnMissionCompleted;
+
     public Dictionary<int, Note> requiredNotes;
     public int requiredNoteIndex = 0;
     public string missionInstructions;

@@ -33,7 +33,7 @@ public class UpdateUI : MonoBehaviour
         {
             missionText.text = $"Mission: {missionController.currentMission.missionName}";
             instructionText.text = missionController.missionInstructions;
-            messageText.text = "Press trigger to start...";
+            messageText.text = "Push green button to start...";
             // play voice clip
         }
 
