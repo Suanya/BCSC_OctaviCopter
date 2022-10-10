@@ -17,12 +17,10 @@ Shader "Unlit/RainbowHeight"
             ZWrite Off // otherwise transparency collission mess   
             Blend SrcAlpha OneMinusSrcAlpha // src * srcAplpha + dst * (1-srcAlpha) -> alphaBlending
             
-
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
            
-
             #include "UnityCG.cginc"
 
             struct MeshData
@@ -34,7 +32,6 @@ Shader "Unlit/RainbowHeight"
             struct Interpolators
             {
                 float2 uv : TEXCOORD0;
-                
                 float4 vertex : SV_POSITION;
             };
 
@@ -74,64 +71,63 @@ Shader "Unlit/RainbowHeight"
                 float heightbarMask = _Height > i.uv.x; 
                 clip(heightbarMask - 0.5); // transparency without sorting issues what you normally get with transparency (still writing to the zBuffer)              
                 float3 heightbarColor = tex2D(_MainTex, float2(_Height, i.uv.y));
-                
-
-                // Flash if hit the right height
-                // (0,0.12) (0.12,0.27) (0.27, 0.42) (0.42, 0.57) (0.57, 0.72) (0.72, 0.87) (0.87, 0.92) (0.92, 1)
-
-                // C             
-                if(_Height  <= 0.12)
-                {
-                    float flash = cos(_Time.y * 4) * 0.4 + 1;
-                    heightbarColor *= flash;
-                }
+      
 
                 /*
-                // D
-                if(_Height > 0.12 && _Height < 0.27)
+                // Flash if hit the right height
+                // C(0,0.12) D(0.12,0.27) E(0.27, 0.42) F(0.42, 0.57) G(0.57, 0.72) A(0.72, 0.87) H(0.87, 0.92)
+
+                // compare.Tag == "C" ... https://docs.unity3d.com/Manual/SL-SubShaderTags.html
+
+                // C             
+                if(_Height > 0.046 && _Height < 0.11)
                 {
                     float flash = cos(_Time.y * 4) * 0.4 + 1;
                     heightbarColor *= flash;
                 }
 
+                // D
+                if(_Height = 0.14 && _Height < 0.26)
+                {
+                    float flash = cos(_Time.y * 4) * 0.4 + 1;
+                    heightbarColor *= flash;
+                }
+ 
                 // E
-                if(_Height > 0.27 && _Height < 0.42)
+                if(_Height > 0.3 && _Height < 0.41)
                 {
                     float flash = cos(_Time.y * 4) * 0.4 + 1;
                     heightbarColor *= flash;
                 }
 
                 // F
-                if(_Height > 0.42 && _Height < 0.57)
+                if(_Height > 0.45 && _Height < 0.54)
                 {
                     float flash = cos(_Time.y * 4) * 0.4 + 1;
                     heightbarColor *= flash;
                 }
-                */
-
+                
                 // G
-                if(_Height > 0.57 && _Height < 0.72)
+                if(_Height > 0.6 && _Height < 0.69)
                 {
                     float flash = cos(_Time.y * 4) * 0.4 + 1;
                     heightbarColor *= flash;
                 }
 
-                /* 
-                // A
-                if(_Height > 0.72 && _Height < 0.87)
+                // A 
+                if(_Height > 0.75 && _Height < 0.84 )
                 {
                     float flash = cos(_Time.y * 4) * 0.4 + 1;
                     heightbarColor *= flash;
                 }
-
+  
                 // H
-                if(_Height > 0.87)
+                if(_Height > 0.9)
                 {
                     float flash = cos(_Time.y * 4) * 0.4 + 1;
                     heightbarColor *= flash;
                 }
                 */
-
                 return float4(heightbarColor * heightbarMask * boarderMask, 1);
             }
             ENDCG

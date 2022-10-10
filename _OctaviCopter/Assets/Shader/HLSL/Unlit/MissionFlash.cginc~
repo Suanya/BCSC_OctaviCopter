@@ -1,0 +1,16 @@
+
+
+
+
+
+
+_CHeight("CHeight", Range(0,0.12)) = 0
+
+_GHeight("GHeight", Range(0.57,0.72)) = 0.57
+
+
+
+float MissionCG(float _CHeight, float _GHeight)
+{
+    return;
+}

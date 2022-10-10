@@ -25,8 +25,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AnimSpeed: 1
-    - _GlitterPow: 5
-    - _NoiseScale: 1
+    - _GlitterPow: 50
+    - _NoiseScale: 0
     - _ReflId: 1
     - _ReflRoughness: 0
     - _RefrId: 1
