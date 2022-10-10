@@ -17,7 +17,6 @@ public class UpdateUI : MonoBehaviour
     {
         missionController.OnMissionSetUp += InformStartingMission;
         levelManager.MissionCanStart += InformMissionLaunched;
-        // levelManager.OnLastMissionComplete += InformLevelCompleted;  wasn't displaying in UI anyway; look at again if needed
     }
 
     public void InformStartingLevel(string missionName, string missionInstructions)
@@ -28,19 +27,21 @@ public class UpdateUI : MonoBehaviour
 
     public void InformStartingMission()
     {
-        // update mission info
 
-        {
-            missionText.text = $"Mission: {missionController.currentMission.missionName}";
-            instructionText.text = missionController.missionInstructions;
-            messageText.text = "Push green button to start...";
-            // play voice clip
-        }
+        missionController.OnMissionSetUp -= InformStartingMission;
+
+        missionText.text = $"Mission: {missionController.currentMission.missionName}";
+        instructionText.text = missionController.missionInstructions;
+        messageText.text = "Push green button to start...";
+        // play voice clip
+
 
     }
 
     public void InformMissionLaunched()
     {
+        
+        levelManager.MissionCanStart -= InformMissionLaunched;
 
         missionController.OnCorrectNoteCollected += InformCorrectNote;
         missionController.OnIncorrectNoteCollected += InformIncorrectNote;

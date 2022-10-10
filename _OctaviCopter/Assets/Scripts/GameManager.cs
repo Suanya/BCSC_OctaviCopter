@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-       // Debug.Log($"level loaded {levels[0].name}");
+       Debug.Log($"level loaded {levels[0].name}");
        // SceneController.OnSceneChangeRequired(SceneController.SceneAction.Login);
     }
 
@@ -41,9 +41,6 @@ public class GameManager : MonoBehaviour
     public void PlayRewardScene()
     {
         
-        // open the bolt scene: scene controller will read name
-        SceneController.OnSceneChangeRequired(SceneController.SceneAction.BoltScene);
-
         // Saves the level as completed in the database
 
         // goto next level
@@ -53,6 +50,8 @@ public class GameManager : MonoBehaviour
             // TODO: Get back to exit scene?
             Debug.Log("All levels have been played!!");
         }
+        // open the bolt scene: scene controller will read name
+        SceneController.OnSceneChangeRequired(SceneController.SceneAction.BoltScene);
     }
 
 }

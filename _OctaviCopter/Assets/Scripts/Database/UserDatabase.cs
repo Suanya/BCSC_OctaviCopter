@@ -16,9 +16,8 @@ public static class UserDatabase
         connection.CreateTable<UserProgress>();
     }
 
-    public static User AddNewUser(string userName)
+    public static void AddNewUser(string userName)
     {
-        
         int userID = GenerateRandomID();
         connection.Insert(new User
         {
@@ -26,11 +25,12 @@ public static class UserDatabase
             UserName = userName
         });
 
-        return GetUser(userName);
     }
 
     public static User GetUser(string userName)
     {
+        // check if database exists
+
         try
         {
             // executed until an exception is thrown or it completes successfully
