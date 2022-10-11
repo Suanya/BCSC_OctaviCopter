@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c167c9e14d550d45994e3376d4b5fdc, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: 
-  levelID: 0
+  levelID: 1
   levelName: Back to Basics
-  missionCategory: 
+  missionCategory: Chord
   missionKeyPrefab: {fileID: 1853333084079902770, guid: a1541f6d43bc9674395a4658c5c495a4,
     type: 3}
   rewardSceneName: CutScene

@@ -31,8 +31,6 @@ public class Note : MonoBehaviour
 
     private void NoteHitActivities()
     {
-        Debug.Log($"Playing {audioSource.clip.name}");
-
         audioSource.PlayOneShot(audioSource.clip);
         // maybe haptic feedback here?
         OnNoteCollected?.Invoke(this);
@@ -41,7 +39,6 @@ public class Note : MonoBehaviour
 
     public void TurnOnHintEffect()
     {
-        Debug.Log($"Activating {gameObject.name}; currently active? {visualEffectContainer.activeSelf}");
         visualEffectContainer.SetActive(true);
         
     }
@@ -49,7 +46,6 @@ public class Note : MonoBehaviour
     public void TurnOffHintEffect()
     {
         visualEffectContainer.SetActive(false);
-        Debug.Log($"Note {gameObject.name} deactivated");
 
     }
 }

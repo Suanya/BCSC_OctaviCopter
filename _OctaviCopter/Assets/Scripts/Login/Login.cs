@@ -127,6 +127,9 @@ public class Login : MonoBehaviour
         // Add user as last user
         PlayerPrefs.SetString("LastUser", currentUser.UserName);
 
+        // Tell the game manager the UserID
+        GameManager.instance.userName = currentUser.UserName;
+
         // present the welcome message
         nameInput.gameObject.SetActive(false);
         welcomeText.gameObject.SetActive(true);

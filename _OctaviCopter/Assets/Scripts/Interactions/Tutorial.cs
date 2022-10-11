@@ -10,12 +10,13 @@ public class Tutorial : MonoBehaviour
     public InputActionReference moveUpReference = null;
     public InputActionReference moveDownReference = null;
 
+    //[SerializeField] private AudioListener audioListener;
     public KeyboardKey fKey;
 
     [SerializeField] private Transform octaviCopter;
     [SerializeField] private PlayableDirector tutorialDirector;
 
-    private tutorialStage currentStage;
+    [SerializeField] private tutorialStage currentStage;
     private float startingZPosition;
     private bool awaitingInput = false;
 
@@ -33,7 +34,7 @@ public class Tutorial : MonoBehaviour
     {
         currentStage = tutorialStage.Intro;
         startingZPosition = octaviCopter.position.z;
-        fKey.hintKeyPlayed += KeyboardPlayed;
+        
     }
 
     // Update is called once per frame
@@ -45,6 +46,7 @@ public class Tutorial : MonoBehaviour
             {
                 case tutorialStage.FlyUp:
                     {
+                        Debug.Log($"Waiting for FlyUp Input");
                         float upButtonValue = moveUpReference.action.ReadValue<float>();
                         if (upButtonValue > 0)
                         {
@@ -56,6 +58,7 @@ public class Tutorial : MonoBehaviour
                     }
                 case tutorialStage.FlyDown:
                     {
+                        Debug.Log($"Waiting for FlyDown Input");
                         float downButtonValue = moveDownReference.action.ReadValue<float>();
                         if (downButtonValue > 0)
                         {
@@ -67,6 +70,7 @@ public class Tutorial : MonoBehaviour
                     }
                 case tutorialStage.FlyForward:
                     {
+                        Debug.Log($"Waiting for FlyForward Input");
                         if (octaviCopter.position.z > startingZPosition)
                         {
                             currentStage++;
@@ -83,6 +87,8 @@ public class Tutorial : MonoBehaviour
     {
         fKey.GetComponent<MeshRenderer>().material = fKey.hintMaterial;
         currentStage++;
+        fKey.hintKeyPlayed += KeyboardPlayed;
+        Debug.Log($"Intro finished - waiting for keyboard input");
     }
     public void KeyboardPlayed()
     {
@@ -107,10 +113,11 @@ public class Tutorial : MonoBehaviour
 
     public void StartTutorialDirector()
     {
+        Debug.Log($"Restarting at {currentStage}");
         awaitingInput = false;
         tutorialDirector.time = tutorialDirector.time;
         tutorialDirector.playableGraph.GetRootPlayable(0).SetSpeed(1);
-
+        AudioListener.pause = false;
     }
 
     public void StopTutorialDirector()
@@ -118,6 +125,8 @@ public class Tutorial : MonoBehaviour
         Debug.Log($"Stopping at {currentStage}");
         awaitingInput = true;
         tutorialDirector.playableGraph.GetRootPlayable(0).SetSpeed(0);
+        AudioListener.pause = true;
+
         if (currentStage == tutorialStage.Intro)
         {
             IntroFinished();
