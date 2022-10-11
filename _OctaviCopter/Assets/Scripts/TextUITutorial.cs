@@ -90,9 +90,96 @@ public class TextUITutorial : MonoBehaviour
 
         Text.text = "to collect them.";
         yield return new WaitForSeconds(2);
+
+        /*  
+        Text.text = "You can fly the OctaviCopter";
+        yield return new WaitForSeconds(3);
+
+        Text.text = "up and down.";
+        yield return new WaitForSeconds(3);
+
+        Text.text = "Using the bottons";
+        yield return new WaitForSeconds(3);
+         
+        Text.text = "on either controller";
+        yield return new WaitForSeconds(3);
+
+        Text.text = "With B & Y you fly higher";
+        yield return new WaitForSeconds(3);
+
+        Text.text = "Try to move up, now!";
+        yield return new WaitForSeconds(3);
+
+        
+        Text.text = "With A & X you fly lower";
+        yield return new WaitForSeconds(3);
+
+        
+        Text.text = "Try to move down, now!";
+        yield return new WaitForSeconds(3);
+
+        Text.text = "Noticed the changing";
+        yield return new WaitForSeconds(3);
+
+        Text.text = "colors in front of you?";
+        yield return new WaitForSeconds(3);
+
+        Text.text = "This shows you,";
+        yield return new WaitForSeconds(2);
+
+        Text.text = "your current height";
+        yield return new WaitForSeconds(3);
+
+        Text.text = "This helps you to";
+        yield return new WaitForSeconds(2);
+
+        Text.text = "aim at the note.";
+        yield return new WaitForSeconds(3);
+
+        Text.text = "To fly through";
+        yield return new WaitForSeconds(2);
+
+        Text.text = "you must move forward.";
+        yield return new WaitForSeconds(3);
+
+        Text.text = "Push the joystick";
+        yield return new WaitForSeconds(2);
+
+        Text.text = "forward on either controller";
+        yield return new WaitForSeconds(3);
+
+        Text.text = "Give it a go!";
+        yield return new WaitForSeconds(3);
+
+        Text.text = "Noticed the green & red buttons?";
+        yield return new WaitForSeconds(3)
+
+        Text.text = "Push the red button";
+        yield return new WaitForSeconds(3)
+
+        Text.text = "to exit the game";
+        yield return new WaitForSeconds(3)
+
+        Text.text = "Don't push the red button!";
+        yield return new WaitForSeconds(3)
+
+        Text.text = "After being presented";
+        yield return new WaitForSeconds(3)
+
+        Text.text = "with your mission";
+        yield return new WaitForSeconds(3)
+
+        Text.text = "Push the green button";
+        yield return new WaitForSeconds(3)
+
+        Text.text = "to start the game!";
+        yield return new WaitForSeconds(3)
+
+
+        */
     }
 
-  
 
-  
+
+
 }
