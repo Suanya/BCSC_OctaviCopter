@@ -10,6 +10,7 @@ public class Tutorial : MonoBehaviour
     public InputActionReference moveUpReference = null;
     public InputActionReference moveDownReference = null;
 
+    //[SerializeField] private AudioListener audioListener;
     public KeyboardKey fKey;
 
     [SerializeField] private Transform octaviCopter;
@@ -116,7 +117,7 @@ public class Tutorial : MonoBehaviour
         awaitingInput = false;
         tutorialDirector.time = tutorialDirector.time;
         tutorialDirector.playableGraph.GetRootPlayable(0).SetSpeed(1);
-
+        AudioListener.pause = false;
     }
 
     public void StopTutorialDirector()
@@ -124,6 +125,8 @@ public class Tutorial : MonoBehaviour
         Debug.Log($"Stopping at {currentStage}");
         awaitingInput = true;
         tutorialDirector.playableGraph.GetRootPlayable(0).SetSpeed(0);
+        AudioListener.pause = true;
+
         if (currentStage == tutorialStage.Intro)
         {
             IntroFinished();
