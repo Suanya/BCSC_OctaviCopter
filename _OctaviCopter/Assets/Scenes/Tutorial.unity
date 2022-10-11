@@ -555,9 +555,11 @@ MonoBehaviour:
     type: 3}
   moveDownReference: {fileID: 3589444923303663336, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
+  audioListener: {fileID: 7433466714929979026}
   fKey: {fileID: 5338691525764358426}
   octaviCopter: {fileID: 1070979566065377622}
   tutorialDirector: {fileID: 127016620}
+  currentStage: 0
 --- !u!114 &127016623
 MonoBehaviour:
   m_ObjectHideFlags: 0
