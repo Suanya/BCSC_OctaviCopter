@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-       Debug.Log($"level loaded {levels[0].name}");
+       //Debug.Log($"level loaded {levels[0].name}");
        // SceneController.OnSceneChangeRequired(SceneController.SceneAction.Login);
     }
 
