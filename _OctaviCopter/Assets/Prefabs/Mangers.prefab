@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5096492939501645102}
   - component: {fileID: 5096492939501645101}
   m_Layer: 0
-  m_Name: MangersForTestOnly
+  m_Name: Mangers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123bc809959a3194497c7fec7c184e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useForTesting: 0
+  levels: []
   isNewUser: 0
-  LevelManager: {fileID: 0}
+  userName: 
 --- !u!114 &5096492939501645101
 MonoBehaviour:
   m_ObjectHideFlags: 0

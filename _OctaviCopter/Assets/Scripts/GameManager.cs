@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public bool useForTesting = false;
     public LevelDef[] levels;
     public bool isNewUser;
     public string userName;
@@ -33,8 +34,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-       //Debug.Log($"level loaded {levels[0].name}");
-       // SceneController.OnSceneChangeRequired(SceneController.SceneAction.Login);
+        if (!useForTesting)
+        {
+            Debug.Log($"level loaded {levels[0].name}");
+            SceneController.OnSceneChangeRequired(SceneController.SceneAction.Login);
+        }
+       
     }
 
     public LevelDef GetCurrentLevel(LevelManager levelRequester)
