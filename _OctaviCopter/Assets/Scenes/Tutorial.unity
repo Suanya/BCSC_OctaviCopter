@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.976
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.003719644, g: 0.0035179611, b: 0.0026250707, a: 0.976}
+  m_IndirectSpecularColor: {r: 0.0037232707, g: 0.00352135, b: 0.0026283206, a: 0.976}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -480,6 +480,8 @@ GameObject:
   m_Component:
   - component: {fileID: 127016621}
   - component: {fileID: 127016620}
+  - component: {fileID: 127016623}
+  - component: {fileID: 127016622}
   m_Layer: 0
   m_Name: TutorialPlayableDirector
   m_TagString: Untagged
@@ -512,6 +514,8 @@ PlayableDirector:
     value: {fileID: 244963443}
   - key: {fileID: -9173508935147293350, guid: 5ddec306eca5541fc987ce3f8d14d077, type: 2}
     value: {fileID: 794132097}
+  - key: {fileID: -8636874661968654839, guid: 5ddec306eca5541fc987ce3f8d14d077, type: 2}
+    value: {fileID: 127016619}
   m_ExposedReferences:
     m_References:
     - 6f837d9528447466ca04a171438adb36: {fileID: 535654808}
@@ -535,6 +539,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &127016622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127016619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a0d49fcd22621949a7fe630b9bab123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveUpReference: {fileID: -4777611520129203166, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  moveDownReference: {fileID: 3589444923303663336, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  fKey: {fileID: 5338691525764358426}
+  octaviCopter: {fileID: 1070979566065377622}
+  tutorialDirector: {fileID: 127016620}
+--- !u!114 &127016623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127016619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: b2ca89b1134dafe4eb8fd4fd428cc7b3, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 127016622}
+          m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+          m_MethodName: StopTutorialDirector
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &141084524
 GameObject:
   m_ObjectHideFlags: 0
