@@ -27,10 +27,35 @@ public static class UserDatabase
 
     }
 
+    public static void UpdateLevel(string userName, long userID, int levelNumber, string levelName)
+    {
+        // try to find user in progress table
+        UserProgress currentUserProgress = GetUserProgress(userName);
+
+        if (currentUserProgress == null)
+        {
+            // first entry - just insert
+            connection.Insert(new UserProgress
+            {
+                UserID = userID,
+                UserName = userName,
+                LevelNumber = levelNumber,
+                LevelName = levelName
+            });
+        }
+        else
+        {
+            // subsequent entry - update the values
+            currentUserProgress.LevelNumber = levelNumber;
+            currentUserProgress.LevelName = levelName;
+            // save them
+            connection.Update(currentUserProgress);
+        }
+
+    }
+
     public static User GetUser(string userName)
     {
-        // check if database exists
-
         try
         {
             // executed until an exception is thrown or it completes successfully
@@ -44,6 +69,20 @@ public static class UserDatabase
         }
     }
 
+    public static UserProgress GetUserProgress(string userName)
+    {
+        try
+        {
+            // executed until an exception is thrown or it completes successfully
+            return connection.Get<UserProgress>(userName);
+
+        }
+        catch
+        {
+            // catches exceptions
+            return null;
+        }
+    }
     public static int GenerateRandomID()
     {
         // note: in public release, this should not be this

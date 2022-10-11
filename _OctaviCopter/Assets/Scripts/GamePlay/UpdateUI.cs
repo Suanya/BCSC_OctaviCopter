@@ -28,8 +28,6 @@ public class UpdateUI : MonoBehaviour
     public void InformStartingMission()
     {
 
-        missionController.OnMissionSetUp -= InformStartingMission;
-
         missionText.text = $"Mission: {missionController.currentMission.missionName}";
         instructionText.text = missionController.missionInstructions;
         messageText.text = "Push green button to start...";
@@ -40,8 +38,6 @@ public class UpdateUI : MonoBehaviour
 
     public void InformMissionLaunched()
     {
-        
-        levelManager.MissionCanStart -= InformMissionLaunched;
 
         missionController.OnCorrectNoteCollected += InformCorrectNote;
         missionController.OnIncorrectNoteCollected += InformIncorrectNote;
@@ -67,9 +63,17 @@ public class UpdateUI : MonoBehaviour
 
     public void InformMissionCompleted()
     {
+        messageText.text = $"{missionController.currentMission.missionName} Complete!";
+
+    }
+
+    private void OnDestroy()
+    {
+        levelManager.MissionCanStart -= InformMissionLaunched;
+        missionController.OnMissionSetUp -= InformStartingMission;
         missionController.OnCorrectNoteCollected -= InformCorrectNote;
         missionController.OnIncorrectNoteCollected -= InformIncorrectNote;
-        messageText.text = $"{missionController.name} Complete!";
+        missionController.OnMissionCompleted -= InformMissionCompleted;
     }
 
 }

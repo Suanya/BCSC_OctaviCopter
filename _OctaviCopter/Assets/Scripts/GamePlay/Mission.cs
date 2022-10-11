@@ -11,10 +11,10 @@ public class Mission : MonoBehaviour
 
     public MissionDef currentMission;
 
-    public UnityAction OnMissionSetUp;
-    public UnityAction OnCorrectNoteCollected;
-    public UnityAction OnIncorrectNoteCollected;
-    public UnityAction OnMissionCompleted;
+    public UnityAction OnMissionSetUp = null;
+    public UnityAction OnCorrectNoteCollected = null;
+    public UnityAction OnIncorrectNoteCollected = null;
+    public UnityAction OnMissionCompleted = null;
 
     public Dictionary<int, Note> requiredNotes;
     public int requiredNoteIndex = 0;
