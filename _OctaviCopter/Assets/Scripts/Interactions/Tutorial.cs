@@ -9,19 +9,17 @@ public class Tutorial : MonoBehaviour
 {
     public InputActionReference moveUpReference = null;
     public InputActionReference moveDownReference = null;
-
-    //[SerializeField] private AudioListener audioListener;
     public KeyboardKey fKey;
 
     [SerializeField] private Transform octaviCopter;
     [SerializeField] private PlayableDirector tutorialDirector;
     [SerializeField] private TextUITutorial textCoroutine;
 
-    [SerializeField] private tutorialStage currentStage;
+    [SerializeField] private TutorialStage currentStage;
     private float startingZPosition;
     private bool awaitingInput = false;
 
-    private enum tutorialStage
+    private enum TutorialStage
     {
         Intro,
         Keyboard,
@@ -30,24 +28,22 @@ public class Tutorial : MonoBehaviour
         FlyForward,
         StartMission
     }
-    // Start is called before the first frame update
+
     void Start()
     {
-        currentStage = tutorialStage.Intro;
+        currentStage = TutorialStage.Intro;
         startingZPosition = octaviCopter.position.z;
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(awaitingInput)
         {
             switch (currentStage)
             {
-                case tutorialStage.FlyUp:
+                case TutorialStage.FlyUp:
                     {
-                        Debug.Log($"Waiting for FlyUp Input");
                         float upButtonValue = moveUpReference.action.ReadValue<float>();
                         if (upButtonValue > 0)
                         {
@@ -57,9 +53,8 @@ public class Tutorial : MonoBehaviour
                         }
                         break;
                     }
-                case tutorialStage.FlyDown:
+                case TutorialStage.FlyDown:
                     {
-                        Debug.Log($"Waiting for FlyDown Input");
                         float downButtonValue = moveDownReference.action.ReadValue<float>();
                         if (downButtonValue > 0)
                         {
@@ -69,9 +64,8 @@ public class Tutorial : MonoBehaviour
                         }
                         break;
                     }
-                case tutorialStage.FlyForward:
+                case TutorialStage.FlyForward:
                     {
-                        Debug.Log($"Waiting for FlyForward Input");
                         if (octaviCopter.position.z > startingZPosition)
                         {
                             currentStage++;
@@ -100,7 +94,7 @@ public class Tutorial : MonoBehaviour
 
     public void StartButtonPushed()
     {
-        if(currentStage == tutorialStage.StartMission || !GameManager.instance.isNewUser)
+        if(currentStage == TutorialStage.StartMission || !GameManager.instance.isNewUser)
         {
             SceneController.OnSceneChangeRequired(SceneController.SceneAction.GamePlay);
         }
@@ -114,7 +108,6 @@ public class Tutorial : MonoBehaviour
 
     public void StartTutorialDirector()
     {
-        Debug.Log($"Restarting at {currentStage}");
         awaitingInput = false;
         tutorialDirector.time = tutorialDirector.time;
         tutorialDirector.playableGraph.GetRootPlayable(0).SetSpeed(1);
@@ -124,12 +117,11 @@ public class Tutorial : MonoBehaviour
 
     public void StopTutorialDirector()
     {
-        Debug.Log($"Stopping at {currentStage}");
         awaitingInput = true;
         tutorialDirector.playableGraph.GetRootPlayable(0).SetSpeed(0);
         AudioListener.pause = true;
 
-        if (currentStage == tutorialStage.Intro)
+        if (currentStage == TutorialStage.Intro)
         {
             IntroFinished();
         }
