@@ -1,12 +1,12 @@
 Shader "Unlit/RainbowHeight"
-{
-     Properties
+{     
+    Properties  
     {
         [NoScaleOffset] _MainTex ("Texture", 2D) = "white" {}
         _Height ("Height", Range(0,1)) = 1 // so we don't have to remap it. (0,1) is easier for the math    
         _BoarderSize("BoarderSize", Range(0,0.5)) = 1
-
     }
+
     SubShader
     {
         Tags { "RenderType"="Transparent" "Queue"="Transparent" }
@@ -72,62 +72,19 @@ Shader "Unlit/RainbowHeight"
                 clip(heightbarMask - 0.5); // transparency without sorting issues what you normally get with transparency (still writing to the zBuffer)              
                 float3 heightbarColor = tex2D(_MainTex, float2(_Height, i.uv.y));
       
-
-                /*
-                // Flash if hit the right height
-                // C(0,0.12) D(0.12,0.27) E(0.27, 0.42) F(0.42, 0.57) G(0.57, 0.72) A(0.72, 0.87) H(0.87, 0.92)
-
-                // compare.Tag == "C" ... https://docs.unity3d.com/Manual/SL-SubShaderTags.html
-
-                // C             
-                if(_Height > 0.046 && _Height < 0.11)
+                // Flash if hit out of range
+                if(_Height< 0.05)
                 {
                     float flash = cos(_Time.y * 4) * 0.4 + 1;
                     heightbarColor *= flash;
                 }
 
-                // D
-                if(_Height = 0.14 && _Height < 0.26)
+                if(_Height > 0.95)
                 {
                     float flash = cos(_Time.y * 4) * 0.4 + 1;
                     heightbarColor *= flash;
                 }
  
-                // E
-                if(_Height > 0.3 && _Height < 0.41)
-                {
-                    float flash = cos(_Time.y * 4) * 0.4 + 1;
-                    heightbarColor *= flash;
-                }
-
-                // F
-                if(_Height > 0.45 && _Height < 0.54)
-                {
-                    float flash = cos(_Time.y * 4) * 0.4 + 1;
-                    heightbarColor *= flash;
-                }
-                
-                // G
-                if(_Height > 0.6 && _Height < 0.69)
-                {
-                    float flash = cos(_Time.y * 4) * 0.4 + 1;
-                    heightbarColor *= flash;
-                }
-
-                // A 
-                if(_Height > 0.75 && _Height < 0.84 )
-                {
-                    float flash = cos(_Time.y * 4) * 0.4 + 1;
-                    heightbarColor *= flash;
-                }
-  
-                // H
-                if(_Height > 0.9)
-                {
-                    float flash = cos(_Time.y * 4) * 0.4 + 1;
-                    heightbarColor *= flash;
-                }
-                */
                 return float4(heightbarColor * heightbarMask * boarderMask, 1);
             }
             ENDCG
