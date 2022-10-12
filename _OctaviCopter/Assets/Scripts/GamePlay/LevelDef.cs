@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 [CreateAssetMenu(fileName ="LevelDef", menuName = "New Level")]
 public class LevelDef : ScriptableObject
 {

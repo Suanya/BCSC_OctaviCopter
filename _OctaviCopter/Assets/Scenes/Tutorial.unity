@@ -558,6 +558,7 @@ MonoBehaviour:
   fKey: {fileID: 5338691525764358426}
   octaviCopter: {fileID: 1070979566065377622}
   tutorialDirector: {fileID: 127016620}
+  textCoroutine: {fileID: 1604424592}
   currentStage: 0
 --- !u!114 &127016623
 MonoBehaviour:
@@ -4396,6 +4397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: {fileID: 0}
+  isPaused: 0
 --- !u!222 &1604424594
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class Tutorial : MonoBehaviour
 
     [SerializeField] private Transform octaviCopter;
     [SerializeField] private PlayableDirector tutorialDirector;
+    [SerializeField] private TextUITutorial textCoroutine;
 
     [SerializeField] private tutorialStage currentStage;
     private float startingZPosition;
@@ -118,6 +119,7 @@ public class Tutorial : MonoBehaviour
         tutorialDirector.time = tutorialDirector.time;
         tutorialDirector.playableGraph.GetRootPlayable(0).SetSpeed(1);
         AudioListener.pause = false;
+        textCoroutine.isPaused = false;
     }
 
     public void StopTutorialDirector()

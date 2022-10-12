@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
     {
         if (!useForTesting)
         {
-            Debug.Log($"level loaded {levels[0].name}");
             SceneController.OnSceneChangeRequired(SceneController.SceneAction.Login);
         }
        
