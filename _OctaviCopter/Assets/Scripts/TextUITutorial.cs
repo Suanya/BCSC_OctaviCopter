@@ -201,6 +201,5 @@ public class TextUITutorial : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         Text.text = "to start the game!";
-        yield return new WaitForSeconds(3);
     }
 }

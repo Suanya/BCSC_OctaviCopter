@@ -242,7 +242,7 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 127016622}
         m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
         m_MethodName: StartButtonPushed
         m_Mode: 1
@@ -21923,9 +21923,9 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 127016622}
         m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
-        m_MethodName: KeyboardPlayed
+        m_MethodName: QuitButtonPushed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
