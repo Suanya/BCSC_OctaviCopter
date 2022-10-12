@@ -64,6 +64,11 @@ public class GameManager : MonoBehaviour
             // TODO: Get back to exit scene?
             Debug.Log("All levels have been played!!");
         }
+        else
+        {
+            StartCoroutine(ManageBoltScene());
+       
+        }
 
     }
 
@@ -84,6 +89,8 @@ public class GameManager : MonoBehaviour
     private void NextLevel()
     {
         currentLevelIndex++;
+        Debug.Log($"Starting level {currentLevelIndex}, once the code is written to do it!");
+
     }
 
 }

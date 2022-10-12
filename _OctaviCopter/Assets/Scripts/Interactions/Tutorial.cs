@@ -83,7 +83,6 @@ public class Tutorial : MonoBehaviour
         fKey.GetComponent<MeshRenderer>().material = fKey.hintMaterial;
         currentStage++;
         fKey.hintKeyPlayed += KeyboardPlayed;
-        Debug.Log($"Intro finished - waiting for keyboard input");
     }
     public void KeyboardPlayed()
     {
@@ -108,11 +107,13 @@ public class Tutorial : MonoBehaviour
 
     public void StartTutorialDirector()
     {
+        textCoroutine.isPaused = false;
+        Debug.Log($"Coroutine should restart");
         awaitingInput = false;
         tutorialDirector.time = tutorialDirector.time;
         tutorialDirector.playableGraph.GetRootPlayable(0).SetSpeed(1);
         AudioListener.pause = false;
-        textCoroutine.isPaused = false;
+        
     }
 
     public void StopTutorialDirector()

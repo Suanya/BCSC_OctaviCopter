@@ -15,7 +15,7 @@ public class SceneController : MonoBehaviour
 
     private Scene currentScene;
     private bool unloadPreviousScene;
-    private bool activeOnLoad;
+    private bool activateOnLoad;
 
     public InputActionReference octaviQuitReference = null;
 
@@ -73,8 +73,11 @@ public class SceneController : MonoBehaviour
                 if (SceneManager.GetActiveScene().name != "LoginScene")
                 {
                     unloadPreviousScene = false;
-                    activeOnLoad = true;
-                    StartCoroutine(ChangeScene("LoginScene", unloadPreviousScene));
+                    activateOnLoad = true;
+                    StartCoroutine(ChangeScene("LoginScene", unloadPreviousScene, activateOnLoad));
+                    // preload the Cut Scene
+                    //activateOnLoad = false;
+                    //StartCoroutine(ChangeScene("CutScene", unloadPreviousScene, ));
                 }
 
                 return;
@@ -82,7 +85,7 @@ public class SceneController : MonoBehaviour
             case SceneAction.CutScene:
 
                 unloadPreviousScene = true;
-                StartCoroutine(ChangeScene("CutScene", unloadPreviousScene));
+                StartCoroutine(ChangeScene("CutScene", unloadPreviousScene, activateOnLoad));
                 //SoundManager.PlayMusic("CutSceneMusic");
 
                 return;
@@ -90,14 +93,14 @@ public class SceneController : MonoBehaviour
             case SceneAction.Tutorial:
 
                 unloadPreviousScene = true;
-                StartCoroutine(ChangeScene("Tutorial", unloadPreviousScene));
+                StartCoroutine(ChangeScene("Tutorial", unloadPreviousScene, activateOnLoad));
 
                 return;
 
             case SceneAction.GamePlay:
 
                 unloadPreviousScene = true;   
-                StartCoroutine(ChangeScene("GameScene", unloadPreviousScene));
+                StartCoroutine(ChangeScene("GameScene", unloadPreviousScene, activateOnLoad));
 
                 return;
 
@@ -107,7 +110,7 @@ public class SceneController : MonoBehaviour
                 unloadPreviousScene = true;
                 string sceneName = GameManager.instance.rewardSceneName;
                 //Note: this will have logic for selecting the Bolt scene related to the level when we have more than one
-                StartCoroutine(ChangeScene(sceneName, unloadPreviousScene));
+                StartCoroutine(ChangeScene(sceneName, unloadPreviousScene, activateOnLoad));
 
                 return;
 
@@ -123,12 +126,13 @@ public class SceneController : MonoBehaviour
         currentSceneAction = newAction;
     }
 
-    private IEnumerator ChangeScene(string newScene, bool unloadOldScene)
+    private IEnumerator ChangeScene(string newScene, bool unloadOldScene, bool activeOnLoad)
     {
         // Unload previous scene if required
         if (unloadOldScene)
         {
             SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+            Resources.UnloadUnusedAssets();
         }
 
         // Load new scene
