@@ -19,7 +19,20 @@ public class OctaviCopterVertical : MonoBehaviour
     {
         thisTransform = GetComponent<Transform>();
         startingHeight = thisTransform.position.y;
-        rainbowScaleometer.SetFloat("_Height", startingHeight);
+        
+    }
+
+    private void Start()
+    {
+        if (rainbowScaleometer == null)
+        {
+            Debug.Log("Not sure why the rainbow is unfound...");
+        }
+        else
+        {
+            rainbowScaleometer.SetFloat("_Height", startingHeight);
+        }
+        
     }
 
     private void Update()
