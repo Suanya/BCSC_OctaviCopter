@@ -1505,6 +1505,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Cheat",
+            "id": "ac8f5cd9-be70-4982-b46f-c2991d547670",
+            "actions": [
+                {
+                    "name": "AdvanceScene",
+                    "type": "Button",
+                    "id": "e1c3160c-8308-4490-b9d5-867485ca2f3b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bc82d188-aad7-4fad-aef3-c637c15385fd",
+                    "path": "<OculusTouchController>/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AdvanceScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

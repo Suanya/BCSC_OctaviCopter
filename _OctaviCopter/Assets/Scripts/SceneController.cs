@@ -69,6 +69,7 @@ public class SceneController : MonoBehaviour
             case SceneAction.Login:
 
                 // The login scene loads first and stays open
+                currentSceneAction = SceneAction.Login;
 
                 if (SceneManager.GetActiveScene().name != "LoginScene")
                 {
@@ -84,6 +85,8 @@ public class SceneController : MonoBehaviour
 
             case SceneAction.CutScene:
 
+                currentSceneAction = SceneAction.CutScene;
+
                 unloadPreviousScene = true;
                 StartCoroutine(ChangeScene("CutScene", unloadPreviousScene, activateOnLoad));
                 //SoundManager.PlayMusic("CutSceneMusic");
@@ -92,12 +95,16 @@ public class SceneController : MonoBehaviour
 
             case SceneAction.Tutorial:
 
+                currentSceneAction = SceneAction.Tutorial;
+
                 unloadPreviousScene = true;
                 StartCoroutine(ChangeScene("Tutorial", unloadPreviousScene, activateOnLoad));
 
                 return;
 
             case SceneAction.GamePlay:
+
+                currentSceneAction = SceneAction.GamePlay;
 
                 unloadPreviousScene = true;   
                 StartCoroutine(ChangeScene("GameScene", unloadPreviousScene, activateOnLoad));
@@ -107,6 +114,8 @@ public class SceneController : MonoBehaviour
 
             case SceneAction.BoltScene:
 
+                currentSceneAction = SceneAction.BoltScene;
+
                 unloadPreviousScene = true;
                 string sceneName = GameManager.instance.rewardSceneName;
                 //Note: this will have logic for selecting the Bolt scene related to the level when we have more than one
@@ -115,6 +124,9 @@ public class SceneController : MonoBehaviour
                 return;
 
             case SceneAction.Exit:
+
+                currentSceneAction = SceneAction.Exit;
+
                 Debug.Log("Game exited");
                 // Exit the game
                 Application.Quit();

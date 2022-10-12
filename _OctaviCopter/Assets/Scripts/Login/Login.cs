@@ -54,7 +54,6 @@ public class Login : MonoBehaviour
 
             if (loginAchieved)
             {
-                Debug.Log($"Login achieved: Goto cutscene start method");
                 StartCutScene();
                 
             }
@@ -65,7 +64,6 @@ public class Login : MonoBehaviour
 
                 // Attempt to log in the current user (either pre-loaded or entered)
                 tempUserName = nameInput.text;
-                Debug.Log($"Attempting login of {tempUserName}");
                 AttemptLogin();
 
             }
@@ -140,7 +138,6 @@ public class Login : MonoBehaviour
 
     public void StartCutScene()
     {
-        Debug.Log("This is where the cut scene will start playing");
         SceneController.OnSceneChangeRequired(SceneController.SceneAction.CutScene);
     }
 
