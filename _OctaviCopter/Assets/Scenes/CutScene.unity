@@ -1970,6 +1970,11 @@ PrefabInstance:
       objectReference: {fileID: 1836601554}
     - target: {fileID: 5502896394279787241, guid: 26d4c3640341f42c3bf5b1df72e49a8a,
         type: 3}
+      propertyPath: m_SceneBindings.Array.data[21].value
+      value: 
+      objectReference: {fileID: 1081183185}
+    - target: {fileID: 5502896394279787241, guid: 26d4c3640341f42c3bf5b1df72e49a8a,
+        type: 3}
       propertyPath: m_ExposedReferences.m_References.Array.size
       value: 1
       objectReference: {fileID: 0}

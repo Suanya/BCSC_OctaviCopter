@@ -7,6 +7,7 @@ using System;
 public class TextUITutorial : MonoBehaviour
 {
     public TextMeshPro Text;
+    public bool isPaused = false;
 
     // Start is called before the first frame update
     void Start()
@@ -75,8 +76,13 @@ public class TextUITutorial : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         Text.text = "Touching the green F Key, now!";
-        yield return new WaitForSeconds(3);
-       
+
+        isPaused = true;
+        while (isPaused)
+        {
+            yield return new WaitForSeconds(1);
+        }
+
         Text.text = "Very good!!!";
         yield return new WaitForSeconds(2);
      
@@ -106,7 +112,13 @@ public class TextUITutorial : MonoBehaviour
       
         Text.text = "Try to move up, now!";
         yield return new WaitForSeconds(3);
-       
+
+        isPaused = true;
+        while (isPaused)
+        {
+            yield return new WaitForSeconds(1);
+        }
+
         Text.text = "Super!!!";
         yield return new WaitForSeconds(2);
 
@@ -115,7 +127,13 @@ public class TextUITutorial : MonoBehaviour
 
         Text.text = "Try to move down, now!";
         yield return new WaitForSeconds(3);
-        
+
+        isPaused = true;
+        while (isPaused)
+        {
+            yield return new WaitForSeconds(1);
+        }
+
         Text.text = "Fantastic!!!";
         yield return new WaitForSeconds(2);
         
@@ -151,7 +169,13 @@ public class TextUITutorial : MonoBehaviour
 
         Text.text = "Give it a go!";
         yield return new WaitForSeconds(3);
-       
+
+        isPaused = true;
+        while (isPaused)
+        {
+            yield return new WaitForSeconds(1);
+        }
+
         Text.text = "Sparkling!";
         yield return new WaitForSeconds(2);
 

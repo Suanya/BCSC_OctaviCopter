@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[System.Serializable]
 [CreateAssetMenu(fileName = "MissionDef", menuName = "New Mission")]
 public class MissionDef : ScriptableObject
 {

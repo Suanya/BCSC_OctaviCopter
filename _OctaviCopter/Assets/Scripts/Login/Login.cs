@@ -55,7 +55,7 @@ public class Login : MonoBehaviour
             if (loginAchieved)
             {
                 Debug.Log($"Login achieved: Goto cutscene start method");
-                //StartCutScene();
+                StartCutScene();
                 
             }
             else
