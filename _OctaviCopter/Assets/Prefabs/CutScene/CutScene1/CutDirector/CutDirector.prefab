@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5502896394279787240}
   - component: {fileID: 5502896394279787241}
+  - component: {fileID: 3627350580980902662}
+  - component: {fileID: 5883730665088122579}
   m_Layer: 0
   m_Name: CutDirector
   m_TagString: Untagged
@@ -56,6 +58,18 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 1866934405290568371, guid: 1be73f2cc581e4912b4a0f8f57df62f7, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 2832385360590744559, guid: 1be73f2cc581e4912b4a0f8f57df62f7, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 1363806323435719891, guid: 1be73f2cc581e4912b4a0f8f57df62f7, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -6561733238137730393, guid: 1be73f2cc581e4912b4a0f8f57df62f7, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -4750131765664152539, guid: 1be73f2cc581e4912b4a0f8f57df62f7, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -1434940994951092194, guid: 1be73f2cc581e4912b4a0f8f57df62f7, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -4871689543563881074, guid: 1be73f2cc581e4912b4a0f8f57df62f7, type: 2}
+    value: {fileID: 0}
   - key: {fileID: -4750131765664152539, guid: 0ce168ea7fecd437c86fbb0c6a6b83da, type: 2}
     value: {fileID: 0}
   - key: {fileID: 8173649327250251976, guid: 0ce168ea7fecd437c86fbb0c6a6b83da, type: 2}
@@ -79,4 +93,50 @@ PlayableDirector:
   - key: {fileID: -6561733238137730393, guid: 0ce168ea7fecd437c86fbb0c6a6b83da, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
-    m_References: []
+    m_References:
+    - 1cd14d64eea824f4f889e7a662a02bd6: {fileID: 0}
+--- !u!114 &3627350580980902662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5502896394279787242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 2e37128ce255c4ef3ba955fbdf80408e, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: CutScene, Assembly-CSharp
+          m_MethodName: OnSceneEnded
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &5883730665088122579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5502896394279787242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb074c765d4cb094385b9b172bdff5d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skipCutSceneReference: {fileID: -9078297745174007585, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  skipMessage: {fileID: 0}
