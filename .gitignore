@@ -130,3 +130,4 @@ _OctaviCopter/Assets/XR/Settings/OpenXR Package Settings.asset.meta
     # Builds
     *.apk
     *.unitypackage
+_OctaviCopter/UserDatabase.db
