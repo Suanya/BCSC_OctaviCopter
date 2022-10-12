@@ -67,7 +67,6 @@ public class LevelManager : MonoBehaviour
     {
         if(!missionInProgress && missionPending)
         {
-            Debug.Log($"Starting mission {currentLevel.missions[missionIndex].missionName}");
             missionInProgress = true;
             missionPending = false;
             MissionCanStart?.Invoke();
@@ -113,7 +112,6 @@ public class LevelManager : MonoBehaviour
 
         yield return new WaitForSeconds(delay);
 
-        Debug.Log($"Loading mission {currentLevel.missions[missionIndex].missionName}");
         NewMissionToLoad?.Invoke(currentLevel.missions[missionIndex]);
         missionController.OnMissionSetUp += PrepareToStartMission;
 

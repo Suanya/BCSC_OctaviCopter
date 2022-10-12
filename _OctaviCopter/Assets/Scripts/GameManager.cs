@@ -8,12 +8,15 @@ public class GameManager : MonoBehaviour
     public bool useForTesting = false;
     public LevelDef[] levels;
     public bool isNewUser;
+    public bool playFabLoginSuccessful;
     public string userName;
     public string rewardSceneName => levels[currentLevelIndex].rewardSceneName;
     
 
     private int currentLevelIndex = 0;
     private BoltFinish boltFinish;
+    private PlayFabLogin playFabLogin;
+
     //public LevelDef lastFinishedLevel => UserProgress.Something to get last completed level
 
     private void Awake()
@@ -37,6 +40,8 @@ public class GameManager : MonoBehaviour
         if (!useForTesting)
         {
             SceneController.OnSceneChangeRequired(SceneController.SceneAction.Login);
+            playFabLogin = GetComponent<PlayFabLogin>();
+
         }
        
     }
@@ -51,13 +56,16 @@ public class GameManager : MonoBehaviour
     public void PlayRewardScene()
     {
         // Saves the level as completed in the database
-        Debug.Log("Saving level in database");
+
         User currentUser = UserDatabase.GetUser(userName);
         UserDatabase.UpdateLevel(currentUser.UserName, currentUser.UserID, currentLevelIndex, levels[currentLevelIndex].levelName);
 
         // Registers the level completion with PlayFab
-
-        Debug.Log("Doing the PlayFab thing");
+        if (playFabLoginSuccessful)
+        {
+            // check if logged in - don't want to prevent offline play
+            playFabLogin.PlayerCompletedLevel(currentLevelIndex);
+        }
 
         if (currentLevelIndex == levels.Length)
         {
@@ -74,6 +82,9 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator ManageBoltScene()
     {
+        // wait for last note decay
+        yield return new WaitForSeconds(4);
+
         // open the bolt scene: scene controller will read name
         SceneController.OnSceneChangeRequired(SceneController.SceneAction.BoltScene);
 
@@ -88,8 +99,18 @@ public class GameManager : MonoBehaviour
 
     private void NextLevel()
     {
+        boltFinish.boltSceneFinished -= NextLevel;
         currentLevelIndex++;
-        Debug.Log($"Starting level {currentLevelIndex}, once the code is written to do it!");
+        if (currentLevelIndex == levels.Length)
+        {
+            // Maybe make end scene version of Cut Scene
+            SceneController.OnSceneChangeRequired(SceneController.SceneAction.CutScene);
+        }
+        else
+        {
+            SceneController.OnSceneChangeRequired(SceneController.SceneAction.GamePlay);
+        }
+        
 
     }
 

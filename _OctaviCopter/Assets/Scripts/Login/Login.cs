@@ -128,6 +128,9 @@ public class Login : MonoBehaviour
         // Tell the game manager the UserID
         GameManager.instance.userName = currentUser.UserName;
 
+        // log in to PlayFab also
+
+
         // present the welcome message
         nameInput.gameObject.SetActive(false);
         welcomeText.gameObject.SetActive(true);
