@@ -101,7 +101,7 @@ public class TextUITutorial : MonoBehaviour
         Text.text = "up and down.";
         yield return new WaitForSeconds(2);
       
-        Text.text = "Using the bottons";
+        Text.text = "Using the buttons";
         yield return new WaitForSeconds(2);
        
         Text.text = "on either controller";

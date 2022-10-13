@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionName: Major Second A G
   missionGraphic: {fileID: 0}
-  scaleColumnSpacing: 15
+  scaleColumnSpacing: 30
   typeName: Interval
   baseNote: {fileID: 1409216695694627967, guid: 233076433daec2e48a41fa75d2f521b7,
     type: 3}

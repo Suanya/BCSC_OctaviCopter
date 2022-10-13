@@ -28,8 +28,6 @@ public class GameManager : MonoBehaviour
         else
         {
             instance = this;
-
-            // use when testing scene changes without manager scene
             DontDestroyOnLoad(this);
         }
 
