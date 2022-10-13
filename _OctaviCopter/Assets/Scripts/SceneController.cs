@@ -41,6 +41,7 @@ public class SceneController : MonoBehaviour
         else
         {
             instance = this;
+            DontDestroyOnLoad(this);
         }
 
     }
@@ -148,10 +149,14 @@ public class SceneController : MonoBehaviour
         }
 
         // Load new scene
-        SceneManager.LoadSceneAsync(newScene, LoadSceneMode.Additive);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(newScene);
 
-        // Wait until next frame
-        yield return new WaitForSeconds(3);
+        while (!asyncLoad.isDone)
+        {
+            // Wait until next frame
+            yield return null;
+        }
+        
 
         // Set new scene current and active
         currentScene = SceneManager.GetSceneByName(newScene);

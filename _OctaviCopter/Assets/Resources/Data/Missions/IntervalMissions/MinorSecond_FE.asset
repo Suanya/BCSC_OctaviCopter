@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionName: Minor Second FE
   missionGraphic: {fileID: 0}
-  scaleColumnSpacing: 15
+  scaleColumnSpacing: 30
   typeName: Interval
   baseNote: {fileID: 9040308595963119244, guid: 65e0c5f1544c51b428c3ca50d73bdf99,
     type: 3}

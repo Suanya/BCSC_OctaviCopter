@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.VFX;
-using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.InputSystem.XR;
+
 
 public class Note : MonoBehaviour
 {
-    [SerializeField] XRBaseController LeftController;
-    [SerializeField] XRBaseController RightController;
-
+    
 
     public float altitude;
     public string displayName;
@@ -40,7 +37,7 @@ public class Note : MonoBehaviour
         audioSource.PlayOneShot(audioSource.clip);
         // maybe haptic feedback here?
         OnNoteCollected?.Invoke(this);
-        SendHaptics();
+        
 
     }
 
@@ -56,16 +53,5 @@ public class Note : MonoBehaviour
 
     }
 
-    void SendHaptics()
-    {
-
-        Debug.Log("haptical");
-        if (LeftController != null)
-            LeftController.SendHapticImpulse(0.7f, 0.1f);
-
-        if (RightController != null)
-            RightController.SendHapticImpulse(0.7f, 0.1f);
-
-    }
 
 }

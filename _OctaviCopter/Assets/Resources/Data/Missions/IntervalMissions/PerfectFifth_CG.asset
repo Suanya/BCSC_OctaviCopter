@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionName: Perfect Fifth CG
   missionGraphic: {fileID: 0}
-  scaleColumnSpacing: 15
+  scaleColumnSpacing: 30
   typeName: Interval
   baseNote: {fileID: 8322870775554013872, guid: b1a921dc845536748b00bf8336339bf7,
     type: 3}

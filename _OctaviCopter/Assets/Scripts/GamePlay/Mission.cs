@@ -4,10 +4,13 @@ using UnityEngine;
 using System;
 using System.Linq;
 using UnityEngine.Events;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Mission : MonoBehaviour
 {
     [SerializeField] private LevelManager levelManager;
+    [SerializeField] XRBaseController LeftController;
+    [SerializeField] XRBaseController RightController;
 
     public MissionDef currentMission;
 
@@ -178,8 +181,8 @@ public class Mission : MonoBehaviour
     {
         if (note == requiredNotes[requiredNoteIndex])
         {
-            OnCorrectNoteHit(note);
-
+            OnCorrectNoteHit(note);;
+            SendHaptics();
         }
         else
         {
@@ -236,6 +239,18 @@ public class Mission : MonoBehaviour
         }
         requiredNoteIndex = 0;
         OnMissionCompleted?.Invoke();
+
+    }
+
+    void SendHaptics()
+    {
+
+        Debug.Log("haptical");
+        if (LeftController != null)
+            LeftController.SendHapticImpulse(0.7f, 0.1f);
+
+        if (RightController != null)
+            RightController.SendHapticImpulse(0.7f, 0.1f);
 
     }
 }
