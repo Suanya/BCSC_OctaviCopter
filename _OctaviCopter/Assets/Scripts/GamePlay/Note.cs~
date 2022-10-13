@@ -40,7 +40,6 @@ public class Note : MonoBehaviour
         audioSource.PlayOneShot(audioSource.clip);
         // maybe haptic feedback here?
         OnNoteCollected?.Invoke(this);
-        SendHaptics();
 
     }
 
