@@ -2,11 +2,12 @@ using SQLite4Unity3d;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 
 public static class UserDatabase 
 {
-    private static string databasePath = "UserDatabase.db";
+    private static string databasePath = Path.Combine(Application.persistentDataPath, "UserDatabase.db");
     private static readonly SQLiteConnection connection;
 
     static UserDatabase()

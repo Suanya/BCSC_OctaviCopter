@@ -21,15 +21,12 @@ public class LevelManager : MonoBehaviour
     private bool missionInProgress = false;
     private bool missionPending = false;
 
-    private void Awake()
+    private void Start()
     {
         // Set up the level with its properties and missions
         currentLevel = GameManager.instance.GetCurrentLevel(this);
         currentScaleColumn = SpawnScaleColumn();
 
-    }
-    private void Start()
-    {
         missionController.OnMissionSetUp += PrepareToStartMission;
         NewMissionToLoad?.Invoke(currentLevel.missions[missionIndex]);
         
